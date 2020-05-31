@@ -1,0 +1,973 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrartcl
+\begin_preamble
+\addtokomafont{section}{\MakeUppercase}
+\addtokomafont{subsection}{\MakeUppercase}
+\usepackage{fontspec, newunicodechar}
+\newfontfamily{\fallbackfont}{Arial}[Scale=MatchLowercase]
+\DeclareTextFontCommand{\textfallback}{\fallbackfont}
+\newunicodechar{¼}{\textfallback{¼}}
+\newunicodechar{⅓}{\textfallback{⅓}}
+\newunicodechar{⅛}{\textfallback{⅛}}
+\definecolor{pink}{RGB}{255, 117, 208}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "Metropolis"
+\font_sans "default" "Metropolis Extra Bold"
+\font_typewriter "default" "Metropolis Medium"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf true
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype true
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "Digit Manual"
+\pdf_author "Poly Effects"
+\pdf_subject "Poly Digit Manual"
+\pdf_keywords "digt"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=pink,citecolor=pink"
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices true
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\boxbgcolor #ff75d0
+\index Index
+\shortcut idx
+\color #ff75d0
+\end_index
+\leftmargin 2.5cm
+\topmargin 2cm
+\rightmargin 2.5cm
+\bottommargin 3cm
+\footskip 2cm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle plain
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/DIGIT - Primary Colour Logo.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thanks for making Digit by Poly Effects part of your board.
+ We hope you enjoy the sounds of Digit.
+ We will continue to release more tutorial videos and adding more help directly
+ on the pedal.
+ If you're ever confused by anything or need help please contact us.
+ This manual is a compliment to the videos.
+ Please watch the videos at 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://youtu.be/_1ZcEftfXt4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/digit_product_720.jpg
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+Manual is currently a work in progress!
+\end_layout
+
+\begin_layout Quote
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Getting Started 
+\end_layout
+
+\begin_layout Subsection
+Power
+\end_layout
+
+\begin_layout Standard
+The first thing to do is power Digit.
+ It's 9V center negative and requires 500mA.
+ After that it'll start up.
+ Start up time is currently a bit long, so don't panic if nothing is happening
+ for a few seconds.
+ This will be reduced in future firmware.
+\end_layout
+
+\begin_layout Standard
+Once Digit has started up we're at the main screen, with the default preset
+ loaded.
+ From here we can add modules, change the settings of existing modules,
+ connect modules or load a preset.
+ This leads to the question, what is a module?
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_25_14-Digit 2.png
+	width 90text%
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Modules
+\end_layout
+
+\begin_layout Standard
+Modules are the basic blocks you connect in Digit.
+ Think of them as individual effect pedals on a pedal board that you place
+ and connect.
+ There are some modules that process audio, and some modules that you can
+ use to control other modules.
+ The ability to control modules is the powerful modular / eurorack style
+ workflow that differentiates Digit from many other systems.
+\end_layout
+
+\begin_layout Subsection
+Add a module
+\end_layout
+
+\begin_layout Standard
+To start, we'll add a delay to the default preset.
+ To do this, tap plus and choose delay.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_27_37-Digit 2.png
+	width 90text%
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The new delay will appear on the screen and you can now drag it to a comfortable
+ spot.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_28_05-Digit 2.png
+	width 90text%
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+One you're done moving it, exit move mode by tapping back.
+ To start I recommend tapping the help button (the ? mark) which will turn
+ on the extra help labels.
+\end_layout
+
+\begin_layout Subsection
+Connect a module
+\end_layout
+
+\begin_layout Standard
+You'll now want to connect up the delay.
+ Tap input 1, then tap connect.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_28_38-Digit 2.png
+	width 90text%
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now tap what you want to connect input 1 to, in this case the delay 1.
+ This is just the same as connecting up pedals on a pedal board, but you
+ can split and merge signals easily.
+ You're now in connect mode, as you can see by the icon in the bottom middle.
+ You choose a source and then a module to connect to.
+ So now tap delay 1 and then tap output 1 to connect them.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_28_48-Digit 2.png
+	width 90text%
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we can exit connect mode by tapping tapping back.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_28_57-Digit 2.png
+	width 90text%
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Change settings 
+\end_layout
+
+\begin_layout Standard
+We can now change the settings of the delay.
+ Tap on it to get up the controls.
+ Many modules have special extra controls as well as this overview.
+ If they do you can tap the detail view (the eye icon) to see them.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_30_12-Digit 2.png
+	width 90text%
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Knobs
+\end_layout
+
+\begin_layout Standard
+Once you touch any slider to change it, it automatically maps to the knobs.
+ The right knob changes the value a lot (coarse) and the left by a little
+ (fine).
+\end_layout
+
+\begin_layout Subsection
+Presets
+\end_layout
+
+\begin_layout Standard
+To save or load a preset tap the floppy disk icon.
+ You'll also see a set list option.
+ This is what order you move through the presets when pressing both center
+ and right or center and left foot switches together.
+\end_layout
+
+\begin_layout Subsection
+Foot switches
+\end_layout
+
+\begin_layout Standard
+By default, the right most foot switch is bypass and the two others don't
+ do anything.
+ Foot switches can act as tempo sources or as control sources.
+ To connect a foot switch to something, first tap add (+) and then select
+ foot switch A or B.
+ A is the left one, B is the center.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_33_25-Digit 2.png
+	width 90text%
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now tap the foot switch module you've added and then tap connect.
+ You can now connect it to things you want to control.
+ There are two outputs, the tap tempo and its value.
+ Value is if it's up or pressed down.
+ To connect tap tempo from the foot switch, choose the BPM out and then
+ tap delay 1.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_33_53-Digit 2.png
+	width 90text%
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+LFO / control signals
+\end_layout
+
+\begin_layout Standard
+As you saw with foot switches, one module can control another.
+ If we now add a low frequency oscillator (LFO) we can use that to control
+ other settings on the delay.
+ Add the LFO 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_34_37-Digit 2.png
+	width 90text%
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then tap connect, and connect it to warp on delay 1.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_34_56-Digit 2.png
+	width 90text%
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Control signals are coloured green.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_35_01-Digit 2.png
+	width 90text%
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The effect will be quite strong, so if we want to reduce it we can add other
+ modules in between such as the attenuverter that act on the control signals.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_36_59-Digit 2.png
+	width 90text%
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The attenuverter attenuates and/or inverts a signal.
+ It has two inputs which can be either be controlled by the sliders or by
+ a control input.
+ You can attenuate / invert one control signal with another allowing you
+ ring mod / AM style control possibilities.
+ In our case of wanting to control the level or phase of the LFO, we’ll
+ connect to the multiplicand and then control the multiplier with the slider.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_37_13-Digit 2.png
+	width 90text%
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_38_27-Digit 2.png
+	width 90text%
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Firmware update
+\end_layout
+
+\begin_layout Standard
+If you currently have version 1.something (eg 1.7) firmware installed (check
+ in the setting menu) get all the packages in the 'upgrade_from_1' folder
+ from here and put them on a usb flash drive.
+ Tap upgrade firmware and wait while nothing appears to happen for about
+ 20 minutes.
+ When you press the firmware update button there's no feedback and nothing
+ happens at all, it is working but the early firmware update interface is
+ pretty terrible.
+ Just walk off and come back in a bit.
+ The pedal should automatically restart with the new firmware.
+ If it hasn't restarted after 35 minutes, panic and contact me.
+ It takes quite a while.
+ Updates in the 2 series only take a minute or two.
+ 
+\end_layout
+
+\begin_layout Standard
+The text that comes up at the end will have many messages and one of the
+ messages will say : 'Failed to unmount media.' This is okay.
+ Don’t turn it off then.
+ It’ll will restart itself soon
+\end_layout
+
+\begin_layout Standard
+A full video on how to copy the files and update is available here: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://youtu.be/5fXnT4UiqGQ
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If you have version 2 installed, please grab just the 2 packages in the
+ 'upgrade_from_2' folder from here and put them on a usb flash drive and
+ click upgrade.
+ It should be very quick.
+ Restart when told to.
+\end_layout
+
+\begin_layout Standard
+The USB flash drive must be formatted FAT32 and have one partition on it.
+ If the update fails, please try pressing export presets in the settings
+ screen.
+ If that also fails then the USB flash drive is unreadable, either due to
+ having no partitions (partitonless drive) or being the wrong format.
+ Please contact me for help.
+ Please use a normal USB flash drive and not an external hard drive.
+ The cheap NXT ones from Staples work well.
+ All Sandisk ones tested also worked well.
+ Verbatim ones tested have failed.
+\end_layout
+
+\begin_layout Subsection
+Inputs as effects loops
+\end_layout
+
+\begin_layout Standard
+You can use the input / outputs of Digit as effect loops.
+ For example, physically connect output 3 to an external phaser pedal, then
+ connect the output of the phaser to input 3.
+ Then on Digit, connect a delay to output 3, and then connect input 3 directly
+ to output 1.
+ The repeats of that delay will now be running through the phaser.
+ Be careful not to create feedback paths, or route dry in parallel where
+ some signal goes through external pedals.
+ The extra latency / phase difference between the direct and effected signals
+ can cause weird effects.
+ So it’s always safer just to effect things like delays / reverb tails.
+\end_layout
+
+\begin_layout Subsection
+Rhythmic delays
+\end_layout
+
+\begin_layout Standard
+Tap a delay to get the overview, then tap to see the main controls view
+ (the eye icon).
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_30_12-Digit 2.png
+	width 90text%
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The top slider is the number of ¼ notes.
+ You can then choose under it the extra subdivision you want.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_30_28-Digit 2.png
+	width 90text%
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For example, if you choose zero for number of ¼ notes and then ⅓ you’ll
+ have the delay on the triplets.
+ If you choose 4 ¼ notes and ⅓ it’ll be on the first triplet of the second
+ bar.
+ You can also just set delay times via milliseconds if you want.
+ The preset quarter dot 8 is a good starting point, showing a ¼ note delay
+ and a dotted ⅛ delay.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_42_02-Digit 2.png
+	width 90text%
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You can see the total time in ms and in the slider the total beat + fraction.
+ In this case 4.75 as we’ve got our number of beats set to 4, and our subdivision
+ set to ⅛ dotted, which is 0.75 of a ¼ note.
+\end_layout
+
+\begin_layout Subsection
+Import reverbs / cabs
+\end_layout
+
+\begin_layout Standard
+To import new cab or reverb IRs onto Digit, copy them onto a USB flash drive
+ in folders called reverbs and cabs for each.
+ Then go to settings and tap Copy IRs.
+ The files must be 48 kHz wavs.
+ 
+\end_layout
+
+\begin_layout Subsection
+Import / Export Presets
+\end_layout
+
+\begin_layout Section
+Digit Modules
+\end_layout
+
+\begin_layout Subsection
+Amp Bass Svt40 
+\end_layout
+
+\begin_layout Subsection
+Attenuverter 
+\end_layout
+
+\begin_layout Standard
+The attenuverter attenuates and/or inverts a control signal.
+ It has two inputs which can be either be controlled by the sliders or by
+ a control input.
+ So you can attenuate / invert one control signal with another giving you
+ ring mod / AM style control possibilities.
+ Parameters: output = multiplicand * multiplier.
+\end_layout
+
+\begin_layout Subsection
+Auto Swell 
+\end_layout
+
+\begin_layout Subsection
+Delay
+\end_layout
+
+\begin_layout Standard
+This is a delay with controllable read and write heads.
+ Attach a footswitch module to use tap tempo.
+\end_layout
+
+\begin_layout Subsubsection
+parameters
+\end_layout
+
+\begin_layout Description
+Tme: delay time in beats.
+ 
+\end_layout
+
+\begin_layout Description
+Bpm: tempo in beats per minute.
+ Connect a footswitch module to this to use tap tempo.
+ 
+\end_layout
+
+\begin_layout Description
+Feedback: number of repeats 
+\end_layout
+
+\begin_layout Description
+Tone: blends between a tape style and digital style delay 
+\end_layout
+
+\begin_layout Description
+Level: level of the repeats 
+\end_layout
+
+\begin_layout Description
+Warp: the read head of the delay.
+ Modulate this to get warble.
+ 
+\end_layout
+
+\begin_layout Description
+Glide: how slowly a time change occurs.
+ Effects warp and time.
+ 
+\end_layout
+
+\begin_layout Subsection
+Env Follower 
+\end_layout
+
+\begin_layout Subsection
+Filter 
+\end_layout
+
+\begin_layout Subsection
+Foot Switch A / B / C 
+\end_layout
+
+\begin_layout Standard
+Connect level out to any control input or BPM out to any BPM input.
+ 
+\end_layout
+
+\begin_layout Subsection
+Freeze 
+\end_layout
+
+\begin_layout Standard
+Holds what you're playing when the control level is active (1), creating
+ a drone.
+\end_layout
+
+\begin_layout Subsection
+LFO 
+\end_layout
+
+\begin_layout Standard
+Low Frequency Oscillator, this sends a control signal out and can modulate
+ other parameters.
+ 
+\end_layout
+
+\begin_layout Subsection
+Mix VCA 
+\end_layout
+
+\begin_layout Subsection
+Mono EQ / Stereo EQ 
+\end_layout
+
+\begin_layout Standard
+A power parametric EQ, available in mono or stereo versions.
+ 
+\end_layout
+
+\begin_layout Subsection
+Mono Cab
+\end_layout
+
+\begin_layout Standard
+Load a cab IR.
+ 
+\end_layout
+
+\begin_layout Subsection
+Mono Reverb / Stereo Reverb
+\end_layout
+
+\begin_layout Standard
+Convolution based reverb.
+ The mono version loads a mono IR file, 1 in 1 out.
+ The stereo version loads a stereo IR, 1 in 2 out.
+ 
+\end_layout
+
+\begin_layout Subsection
+Pan 
+\end_layout
+
+\begin_layout Subsection
+Power Amp Cream
+\end_layout
+
+\begin_layout Subsection
+Power Amp Super
+\end_layout
+
+\begin_layout Subsection
+Reverse
+\end_layout
+
+\begin_layout Standard
+Reverse the incoming sound, by dividing it up into fragments.
+ Try very long or very short fragment lengths.
+ 
+\end_layout
+
+\begin_layout Subsection
+Saturator 
+\end_layout
+
+\begin_layout Standard
+A tape emulating compressor.
+ Push input gain up for more effect and then balance level.
+ 
+\end_layout
+
+\begin_layout Subsection
+Slew Limiter
+\end_layout
+
+\begin_layout Standard
+Changes how fast a control signal changes.
+ Connect it up to things like foot switches to change them from being instant
+ to slowly swelling.
+ 
+\end_layout
+
+\begin_layout Subsection
+Quad IR Cab / Quad IR Reverb
+\end_layout
+
+\begin_layout Standard
+Loads a quad channel IR, 2 in 2 out.
+ Most likely not what you want.
+ Don’t use this unless you’ve got the right IR files and you’re sure you
+ need it.
+ 
+\end_layout
+
+\begin_layout Subsection
+Turntable Stop
+\end_layout
+
+\begin_layout Standard
+Emultates turning off a turntable.
+ Works well connected to a foot switch.
+ 
+\end_layout
+
+\begin_layout Subsection
+Warmth
+\end_layout
+
+\begin_layout Standard
+This blends between tape and tube style warmth/overdrive.
+ 
+\end_layout
+
+\begin_layout Section
+Regulatory / Licencing
+\end_layout
+
+\begin_layout Standard
+This device complies with Part 15 of FCC rules.
+ Operation is subject to the following two conditions: (1) This device may
+ not cause harmful interference, and (2) this device must accept any interferenc
+e received, including interference that may cause undesired operation
+\end_layout
+
+\begin_layout Standard
+Digit includes code and art (such as fonts) under a variety of licenses
+ including GPL / LGPL / MIT / BSD / OFL.
+ More details of this are available here: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/polyeffects/
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Thanks
+\end_layout
+
+\begin_layout Standard
+A giant collection of people have helped Poly Effects and Digit specifically.
+ These include Helen Davison (my mum), Claire Jeddou, Celeste Reno, Jo Gardiner,
+ David Robillard, Michelle Lam, Bernie Tschirren, Lisa Bryant, Ed Pettersen,
+ Josh Smith, Jordan Rudess, Filipe Coelho and Robin Gareus.
+ 
+\end_layout
+
+\end_body
+\end_document
