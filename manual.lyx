@@ -164,8 +164,12 @@ LatexCommand tableofcontents
 
 \end_layout
 
+\begin_layout Part
+Gettings started
+\end_layout
+
 \begin_layout Section
-Getting Started 
+Start here 
 \end_layout
 
 \begin_layout Subsection
@@ -726,6 +730,26 @@ A giant collection of people have helped Poly Effects and Digit specifically.
  David Robillard, Michelle Lam, Bernie Tschirren, Lisa Bryant, Ed Pettersen,
  Josh Smith, Jordan Rudess, Leon Todd, Filipe Coelho and Robin Gareus.
  
+\end_layout
+
+\begin_layout Part
+Modules
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{modules.tex}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
