@@ -9,7 +9,7 @@
 \addtokomafont{section}{\MakeUppercase}
 \addtokomafont{subsection}{\MakeUppercase}
 \usepackage{fontspec, newunicodechar}
-\newfontfamily{\fallbackfont}{Arial}[Scale=MatchLowercase]
+\newfontfamily{\fallbackfont}{FreeSans}[Scale=MatchLowercase]
 \DeclareTextFontCommand{\textfallback}{\fallbackfont}
 \newunicodechar{¼}{\textfallback{¼}}
 \newunicodechar{⅓}{\textfallback{⅓}}
@@ -22,9 +22,9 @@
 \language_package none
 \inputencoding auto
 \fontencoding global
-\font_roman "default" "Metropolis"
-\font_sans "default" "Metropolis Extra Bold"
-\font_typewriter "default" "Metropolis Medium"
+\font_roman "default" "Barlow"
+\font_sans "default" "Barlow ExtraBold"
+\font_typewriter "default" "Barlow Medium"
 \font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts true
@@ -42,10 +42,10 @@
 \paperfontsize default
 \spacing single
 \use_hyperref true
-\pdf_title "Digit Manual"
+\pdf_title "Digit and Beebo Manual"
 \pdf_author "Poly Effects"
-\pdf_subject "Poly Digit Manual"
-\pdf_keywords "digt"
+\pdf_subject "Digit and Beebo Manual"
+\pdf_keywords "digit beebo"
 \pdf_bookmarks true
 \pdf_bookmarksnumbered false
 \pdf_bookmarksopen true
@@ -112,7 +112,7 @@
 \noindent
 \align center
 \begin_inset Graphics
-	filename D:/git_repos/polydigit/poly_promo_assets/Poly/FB-Cover-image-4-828x465px.jpg
+	filename manual_images/FB-Cover-image-4-828x465px.jpg
 	width 90col%
 
 \end_inset
@@ -121,8 +121,7 @@
 \end_layout
 
 \begin_layout Standard
-I'm currently rewriting the manual to include the new Beebo modules! If
- you're ever confused by anything or need help please contact me.
+If you're ever confused by anything or need help please contact me.
  This manual is a compliment to the videos.
  Please watch the videos at 
 \begin_inset Flex URL
@@ -139,7 +138,7 @@ https://www.youtube.com/channel/UCwQ9E6imYd0qFPMEuEZjcdw
 \end_layout
 
 \begin_layout Quote
-Manual is currently a work in progress!
+Manual is always being improved, please contact me with any suggestions.
 \end_layout
 
 \begin_layout Quote
@@ -175,7 +174,7 @@ Power
 
 \begin_layout Standard
 The first thing to do is power the pedal.
- It's 9V center negative and requires 500mA.
+ It's 9V center negative and requires at least 500mA.
  After that it'll start up.
  Start up time is currently a bit long, so don't panic if nothing is happening
  for a few seconds.
@@ -183,7 +182,7 @@ The first thing to do is power the pedal.
 
 \begin_layout Standard
 Once Digit / Beebo has started up we're at the main screen, with the default
- preset loaded.
+ preset (the first one in your set list) loaded.
  From here we can add modules, change the settings of existing modules,
  connect modules or load a preset.
  This leads to the question, what is a module?
@@ -193,7 +192,7 @@ Once Digit / Beebo has started up we're at the main screen, with the default
 \noindent
 \align center
 \begin_inset Graphics
-	filename D:/photos/Digit_screenshots/design/2020-06-26 17_23_18-Digit 2.png
+	filename manual_images/design/2020-06-26 17_23_18-Digit 2.png
 	width 90text%
 	groupId screenshots
 
@@ -230,7 +229,7 @@ To start, we'll add a delay to the default preset.
 \noindent
 \align center
 \begin_inset Graphics
-	filename D:/photos/Digit_screenshots/design/2020-06-26 17_24_12-Digit 2.png
+	filename manual_images/design/2020-06-26 17_24_12-Digit 2.png
 	width 90text%
 	groupId screenshots
 
@@ -249,7 +248,7 @@ The new delay will appear on the screen and you can now drag it to a comfortable
 \noindent
 \align center
 \begin_inset Graphics
-	filename D:/photos/Digit_screenshots/design/2020-06-26 17_24_43-Digit 2.png
+	filename manual_images/design/2020-06-26 17_24_43-Digit 2.png
 	width 90text%
 	groupId screenshots
 
@@ -261,6 +260,11 @@ The new delay will appear on the screen and you can now drag it to a comfortable
 \begin_layout Standard
 To start I recommend tapping the help button (the ? mark) which will turn
  on the extra help labels.
+ Remember that single modules can be very powerful, so start with a small
+ number of them and understand them before adding more.
+ It'll be much easier to work out what is going on.
+ The standard delay module has many features compared to standalone delay
+ pedals!
 \end_layout
 
 \begin_layout Subsection
@@ -270,20 +274,8 @@ Connect a module
 \begin_layout Standard
 You'll now want to connect up the delay.
  Hold input 1, then with another finger tap the delay you've added.
- 
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align center
-\begin_inset Graphics
-	filename D:/photos/Digit_screenshots/screenshots/2020-02-10 19_28_38-Digit 2.png
-	width 90text%
-	groupId screenshots
-
-\end_inset
-
-
+ This multi touch stuff is really much easier to see on a video.
+ Any recent video should show this connection style.
 \end_layout
 
 \begin_layout Standard
@@ -300,7 +292,7 @@ This is just the same as connecting up pedals on a pedal board, but you
 \noindent
 \align center
 \begin_inset Graphics
-	filename D:/photos/Digit_screenshots/design/2020-06-26 17_25_35-Digit 2.png
+	filename manual_images/design/2020-06-26 17_25_35-Digit 2.png
 	width 90text%
 	groupId screenshots
 
@@ -323,7 +315,7 @@ We can now change the settings of the delay.
 \noindent
 \align center
 \begin_inset Graphics
-	filename D:/photos/Digit_screenshots/design/2020-06-26 17_26_07-Digit 2.png
+	filename manual_images/design/2020-06-26 17_26_07-Digit 2.png
 	width 90text%
 	groupId screenshots
 
@@ -354,15 +346,40 @@ To save or load a preset tap the floppy disk icon.
 \end_layout
 
 \begin_layout Subsection
-Foot switches
+Toggle Effects with Foot switches
 \end_layout
 
 \begin_layout Standard
 By default, the right most foot switch is bypass and the two others don't
  do anything.
  Foot switches can act as tempo sources or as control sources.
- To connect a foot switch to something, first tap add (+) and then select
- foot switch A or B.
+ 
+\end_layout
+
+\begin_layout Standard
+If you just want to enable or disable something with a foot switch, hold
+ the module you want to control and the press the physical foot switch you
+ want to use.
+ A small letter in a circle will appear showing the foot switch you choose
+ to use.
+ You can remap all 3 foot switches like this.
+ You can also assign a single foot switch to multiple modules.
+ 
+\end_layout
+
+\begin_layout Standard
+If you want to toggle between to delays for example, set one to disabled
+ then assign both to the same foot switch, they will now toggle which is
+ active.
+\end_layout
+
+\begin_layout Subsection
+Foot Switches as CV or Tempo Sources
+\end_layout
+
+\begin_layout Standard
+If you want to control a specific parameter with a foot switch, tap add
+ (+) and then select foot switch A or B.
  A is the left one, B is the center, C is the right.
 \end_layout
 
@@ -370,7 +387,7 @@ By default, the right most foot switch is bypass and the two others don't
 \noindent
 \align center
 \begin_inset Graphics
-	filename D:/photos/Digit_screenshots/design/2020-06-26 17_33_59-Digit 2.png
+	filename manual_images/design/2020-06-26 17_33_59-Digit 2.png
 	width 90text%
 	groupId screenshots
 
@@ -393,7 +410,7 @@ Now tap the foot switch module you've added and then tap connect.
 \noindent
 \align center
 \begin_inset Graphics
-	filename D:/photos/Digit_screenshots/design/2020-06-26 17_34_26-Digit 2.png
+	filename manual_images/design/2020-06-26 17_34_26-Digit 2.png
 	width 90text%
 	groupId screenshots
 
@@ -406,7 +423,7 @@ Now tap the foot switch module you've added and then tap connect.
 \noindent
 \align center
 \begin_inset Graphics
-	filename D:/photos/Digit_screenshots/design/2020-06-26 17_35_03-Digit 2.png
+	filename manual_images/design/2020-06-26 17_35_03-Digit 2.png
 	width 90text%
 	groupId screenshots
 
@@ -431,7 +448,7 @@ As you saw with foot switches, one module can control another.
 \noindent
 \align center
 \begin_inset Graphics
-	filename D:/photos/Digit_screenshots/design/2020-06-26 17_34_43-Digit 2.png
+	filename manual_images/design/2020-06-26 17_34_43-Digit 2.png
 	width 90text%
 	groupId screenshots
 
@@ -447,7 +464,7 @@ Control signals are coloured green.
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename D:/photos/Digit_screenshots/design/2020-06-26 17_36_08-Digit 2.png
+	filename manual_images/design/2020-06-26 17_36_08-Digit 2.png
 	width 90text%
 	groupId screenshots
 
@@ -466,7 +483,7 @@ The effect will be quite strong, so if we want to reduce we can tap on the
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename D:/photos/Digit_screenshots/design/2020-06-26 17_55_25-Digit 2.png
+	filename manual_images/design/2020-06-26 17_55_25-Digit 2.png
 	width 90text%
 	groupId screenshots
 
@@ -486,7 +503,7 @@ We can also add other modules in between such as the attenuverter that act
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename D:/photos/Digit_screenshots/design/2020-06-26 17_36_50-Digit 2.png
+	filename manual_images/design/2020-06-26 17_36_50-Digit 2.png
 	width 90text%
 	groupId screenshots
 
@@ -508,53 +525,23 @@ Firmware update
 \end_layout
 
 \begin_layout Standard
-If you currently have version 1.something (eg 1.7) firmware installed (check
- in the setting menu) get all the packages in the 'upgrade_from_1' folder
- from here and put them on a usb flash drive.
- Tap upgrade firmware and wait while nothing appears to happen for about
- 20 minutes.
- When you press the firmware update button there's no feedback and nothing
- happens at all, it is working but the early firmware update interface is
- pretty terrible.
- Just walk off and come back in a bit.
- The pedal should automatically restart with the new firmware.
- If it hasn't restarted after 35 minutes, panic and contact me.
- It takes quite a while.
- Updates in the 2 series only take a minute or two.
+If you have a very early Digit and currently have version 1.something (eg
+ 1.7) firmware installed (check in the setting menu) please contact me before
+ updating.
  
 \end_layout
 
 \begin_layout Standard
-The text that comes up at the end will have many messages and one of the
- messages will say : 'Failed to unmount media.' This is okay.
- Don’t turn it off then.
- It’ll will restart itself soon
-\end_layout
-
-\begin_layout Standard
-A full video on how to copy the files and update is available here: 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-https://youtu.be/5fXnT4UiqGQ
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-If you have version 2 installed, please grab just the 2 packages in the
- 'upgrade_from_2' folder from here and put them on a usb flash drive and
- click upgrade.
+For Beebo or January 2020 or later versions of Digit, please grab the packages
+ in the 'upgrade_from_2' folder from here and put them on a usb flash drive
+ and click upgrade.
  It should be very quick.
  It'll restart itself.
+ The packages need to all be on the USB drive and not in a zip.
+ The current packages are frontend, modules, ingen and extra-content.
+ If you've updated recently and know that one file hasn't changed then you
+ don't need to include it on the USB flash drive next update and it'll update
+ a little faster.
 \end_layout
 
 \begin_layout Standard
@@ -599,7 +586,7 @@ Tap a delay to see the details.
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename D:/photos/Digit_screenshots/design/2020-06-26 17_42_52-Digit 2.png
+	filename manual_images/design/2020-06-26 17_42_52-Digit 2.png
 	width 90text%
 	groupId screenshots
 
@@ -618,7 +605,7 @@ There are two modes.
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename D:/photos/Digit_screenshots/design/2020-06-26 17_43_25-Digit 2.png
+	filename manual_images/design/2020-06-26 17_43_25-Digit 2.png
 	width 90text%
 	groupId screenshots
 
@@ -636,7 +623,7 @@ You can also set time in milliseconds, tap the time button and then you
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename D:/photos/Digit_screenshots/design/2020-06-26 17_43_36-Digit 2.png
+	filename manual_images/design/2020-06-26 17_43_36-Digit 2.png
 	width 90text%
 	groupId screenshots
 
@@ -667,244 +654,38 @@ To import new cab or reverb IRs onto Digit, copy them onto a USB flash drive
 Import / Export Presets
 \end_layout
 
+\begin_layout Standard
+Press the floppy disk icon to get to the preset screen.
+ Then press export preset where it'll ask you if you want to export the
+ current preset or all presets.
+\end_layout
+
 \begin_layout Section
-Digit Modules
+MIDI
 \end_layout
 
 \begin_layout Subsection
-Amp Bass Svt40 
-\end_layout
-
-\begin_layout Subsection
-Attenuverter 
+Changing Presets
 \end_layout
 
 \begin_layout Standard
-The attenuverter attenuates and/or inverts a control signal.
- It has two inputs which can be either be controlled by the sliders or by
- a control input.
- So you can attenuate / invert one control signal with another giving you
- ring mod / AM style control possibilities.
- Parameters: output = multiplicand * multiplier.
-\end_layout
-
-\begin_layout Subsection
-Auto Swell 
-\end_layout
-
-\begin_layout Subsection
-Delay
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename D:/photos/Digit_screenshots/design/2020-06-26 17_26_07-Digit 2.png
-	width 90text%
-	groupId screenshots
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-This is a delay with controllable read and write heads.
- Attach a footswitch module to use tap tempo.
-\end_layout
-
-\begin_layout Subsubsection
-parameters
-\end_layout
-
-\begin_layout Description
-Tme: delay time in beats.
- 
-\end_layout
-
-\begin_layout Description
-Bpm: tempo in beats per minute.
- Connect a footswitch module to this to use tap tempo.
- 
-\end_layout
-
-\begin_layout Description
-Feedback: number of repeats 
-\end_layout
-
-\begin_layout Description
-Tone: blends between a tape style and digital style delay 
-\end_layout
-
-\begin_layout Description
-Level: level of the repeats 
-\end_layout
-
-\begin_layout Description
-Warp: the read head of the delay.
- Modulate this to get warble.
- 
-\end_layout
-
-\begin_layout Description
-Glide: how slowly a time change occurs.
- Effects warp and time.
+To change a preset with a program message, press the floppy disk icon to
+ get to the preset screen.
+ Tap set list and add preset here.
+ The number next to them is what program change message you should send
+ to change to that preset.
+ This is also the order the foot switch pairs with D and E will step through
+ them.
  
 \end_layout
 
 \begin_layout Subsection
-Env Follower 
-\end_layout
-
-\begin_layout Subsection
-Filter 
-\end_layout
-
-\begin_layout Subsection
-Foot Switch A / B / C 
+CC Controls
 \end_layout
 
 \begin_layout Standard
-Connect level out to any control input or BPM out to any BPM input.
- 
-\end_layout
-
-\begin_layout Subsection
-Freeze 
-\end_layout
-
-\begin_layout Standard
-Holds what you're playing when the control level is active (1), creating
- a drone.
-\end_layout
-
-\begin_layout Subsection
-LFO 
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename D:/photos/Digit_screenshots/design/2020-06-26 17_55_25-Digit 2.png
-	width 90text%
-	groupId screenshots
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Low Frequency Oscillator, this sends a control signal out and can modulate
- other parameters.
- 
-\end_layout
-
-\begin_layout Subsection
-Mix VCA 
-\end_layout
-
-\begin_layout Subsection
-Mono EQ / Stereo EQ 
-\end_layout
-
-\begin_layout Standard
-A power parametric EQ, available in mono or stereo versions.
- 
-\end_layout
-
-\begin_layout Subsection
-Mono Cab
-\end_layout
-
-\begin_layout Standard
-Load a cab IR.
- 
-\end_layout
-
-\begin_layout Subsection
-Mono Reverb / Stereo Reverb
-\end_layout
-
-\begin_layout Standard
-Convolution based reverb.
- The mono version loads a mono IR file, 1 in 1 out.
- The stereo version loads a stereo IR, 1 in 2 out.
- 
-\end_layout
-
-\begin_layout Subsection
-Pan 
-\end_layout
-
-\begin_layout Subsection
-Power Amp Cream
-\end_layout
-
-\begin_layout Subsection
-Power Amp Super
-\end_layout
-
-\begin_layout Subsection
-Reverse
-\end_layout
-
-\begin_layout Standard
-Reverse the incoming sound, by dividing it up into fragments.
- Try very long or very short fragment lengths.
- 
-\end_layout
-
-\begin_layout Subsection
-Saturator 
-\end_layout
-
-\begin_layout Standard
-A tape emulating compressor.
- Push input gain up for more effect and then balance level.
- 
-\end_layout
-
-\begin_layout Subsection
-Slew Limiter
-\end_layout
-
-\begin_layout Standard
-Changes how fast a control signal changes.
- Connect it up to things like foot switches to change them from being instant
- to slowly swelling.
- 
-\end_layout
-
-\begin_layout Subsection
-Quad IR Cab / Quad IR Reverb
-\end_layout
-
-\begin_layout Standard
-Loads a quad channel IR, 2 in 2 out.
- Most likely not what you want.
- Don’t use this unless you’ve got the right IR files and you’re sure you
- need it.
- 
-\end_layout
-
-\begin_layout Subsection
-Turntable Stop
-\end_layout
-
-\begin_layout Standard
-Emultates turning off a turntable.
- Works well connected to a foot switch.
- 
-\end_layout
-
-\begin_layout Subsection
-Warmth
-\end_layout
-
-\begin_layout Standard
-This blends between tape and tube style warmth/overdrive.
- 
+To learn a control, press the MIDI icon next to the slider.
+ It will then pulse until it detects a CC.
 \end_layout
 
 \begin_layout Section
@@ -943,7 +724,7 @@ Thanks
 A giant collection of people have helped Poly Effects and Digit specifically.
  These include Helen Davison (my mum), Claire Jeddou, Celeste Reno, Jo Gardiner,
  David Robillard, Michelle Lam, Bernie Tschirren, Lisa Bryant, Ed Pettersen,
- Josh Smith, Jordan Rudess, Filipe Coelho and Robin Gareus.
+ Josh Smith, Jordan Rudess, Leon Todd, Filipe Coelho and Robin Gareus.
  
 \end_layout
 

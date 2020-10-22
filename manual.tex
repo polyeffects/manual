@@ -1,10 +1,10 @@
-%% LyX 2.3.4 created this file.  For more info, see http://www.lyx.org/.
+%% LyX 2.3.4.2 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass{scrartcl}
 \usepackage{fontspec}
-\setmainfont[Ligatures=TeX,Numbers=OldStyle]{Metropolis}
-\setsansfont[Ligatures=TeX]{Metropolis Extra Bold}
-\setmonofont{Metropolis Medium}
+\setmainfont[Ligatures=TeX,Numbers=OldStyle]{Barlow}
+\setsansfont[Ligatures=TeX]{Barlow ExtraBold}
+\setmonofont{Barlow Medium}
 \usepackage[a4paper]{geometry}
 \geometry{verbose,tmargin=2cm,bmargin=3cm,lmargin=2.5cm,rmargin=2.5cm,footskip=2cm}
 \pagestyle{plain}
@@ -20,10 +20,10 @@
  bookmarks=true,bookmarksnumbered=false,bookmarksopen=true,bookmarksopenlevel=1,
  breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=true]
  {hyperref}
-\hypersetup{pdftitle={Digit Manual},
+\hypersetup{pdftitle={Digit and Beebo Manual},
  pdfauthor={Poly Effects},
- pdfsubject={Poly Digit Manual},
- pdfkeywords={digt},
+ pdfsubject={Digit and Beebo Manual},
+ pdfkeywords={digit beebo},
  linkcolor=pink,citecolor=pink}
 
 \makeatletter
@@ -32,7 +32,7 @@
 \addtokomafont{section}{\MakeUppercase}
 \addtokomafont{subsection}{\MakeUppercase}
 \usepackage{fontspec, newunicodechar}
-\newfontfamily{\fallbackfont}{Arial}[Scale=MatchLowercase]
+\newfontfamily{\fallbackfont}{FreeSans}[Scale=MatchLowercase]
 \DeclareTextFontCommand{\textfallback}{\fallbackfont}
 \newunicodechar{¼}{\textfallback{¼}}
 \newunicodechar{⅓}{\textfallback{⅓}}
@@ -43,15 +43,14 @@
 
 \begin{document}
 \begin{center}
-\includegraphics[width=0.9\columnwidth]{D:/git_repos/polydigit/poly_promo_assets/Poly/FB-Cover-image-4-828x465px}
+\includegraphics[width=0.9\columnwidth]{manual_images/FB-Cover-image-4-828x465px}
 \par\end{center}
 
-I'm currently rewriting the manual to include the new Beebo modules!
 If you're ever confused by anything or need help please contact me.
 This manual is a compliment to the videos. Please watch the videos
 at \url{https://www.youtube.com/channel/UCwQ9E6imYd0qFPMEuEZjcdw}
 \begin{quote}
-Manual is currently a work in progress!
+Manual is always being improved, please contact me with any suggestions.
 
 \newpage{}
 \end{quote}
@@ -64,15 +63,16 @@ Manual is currently a work in progress!
 \subsection{Power}
 
 The first thing to do is power the pedal. It's 9V center negative
-and requires 500mA. After that it'll start up. Start up time is currently
-a bit long, so don't panic if nothing is happening for a few seconds.
+and requires at least 500mA. After that it'll start up. Start up time
+is currently a bit long, so don't panic if nothing is happening for
+a few seconds.
 
 Once Digit / Beebo has started up we're at the main screen, with the
-default preset loaded. From here we can add modules, change the settings
-of existing modules, connect modules or load a preset. This leads
-to the question, what is a module?
+default preset (the first one in your set list) loaded. From here
+we can add modules, change the settings of existing modules, connect
+modules or load a preset. This leads to the question, what is a module?
 \begin{center}
-\includegraphics[width=0.9\textwidth]{\string"D:/photos/Digit_screenshots/design/2020-06-26 17_23_18-Digit 2\string".png}
+\includegraphics[width=0.9\textwidth]{\string"manual_images/design/2020-06-26 17_23_18-Digit 2\string".png}
 \par\end{center}
 
 \subsection{Modules}
@@ -89,25 +89,28 @@ from many other systems.
 To start, we'll add a delay to the default preset. To do this, tap
 plus and choose delay. 
 \begin{center}
-\includegraphics[width=0.9\textwidth]{\string"D:/photos/Digit_screenshots/design/2020-06-26 17_24_12-Digit 2\string".png}
+\includegraphics[width=0.9\textwidth]{\string"manual_images/design/2020-06-26 17_24_12-Digit 2\string".png}
 \par\end{center}
 
 The new delay will appear on the screen and you can now drag it to
 a comfortable spot. You can drag any module at any time to move it.
 \begin{center}
-\includegraphics[width=0.9\textwidth]{\string"D:/photos/Digit_screenshots/design/2020-06-26 17_24_43-Digit 2\string".png}
+\includegraphics[width=0.9\textwidth]{\string"manual_images/design/2020-06-26 17_24_43-Digit 2\string".png}
 \par\end{center}
 
 To start I recommend tapping the help button (the ? mark) which will
-turn on the extra help labels.
+turn on the extra help labels. Remember that single modules can be
+very powerful, so start with a small number of them and understand
+them before adding more. It'll be much easier to work out what is
+going on. The standard delay module has many features compared to
+standalone delay pedals!
 
 \subsection{Connect a module}
 
 You'll now want to connect up the delay. Hold input 1, then with another
-finger tap the delay you've added. 
-\begin{center}
-\includegraphics[width=0.9\textwidth]{\string"D:/photos/Digit_screenshots/screenshots/2020-02-10 19_28_38-Digit 2\string".png}
-\par\end{center}
+finger tap the delay you've added. This multi touch stuff is really
+much easier to see on a video. Any recent video should show this connection
+style.
 
 This is just the same as connecting up pedals on a pedal board, but
 you can split and merge signals easily. You choose a source and then
@@ -115,7 +118,7 @@ a module to connect to. So now hold delay 1 and then tap output 1
 to connect them. If you're connecting things with multiple inputs
 or outputs a screen will appear where you can select which to use. 
 \begin{center}
-\includegraphics[width=0.9\textwidth]{\string"D:/photos/Digit_screenshots/design/2020-06-26 17_25_35-Digit 2\string".png}
+\includegraphics[width=0.9\textwidth]{\string"manual_images/design/2020-06-26 17_25_35-Digit 2\string".png}
 \par\end{center}
 
 \subsection{Change settings }
@@ -123,7 +126,7 @@ or outputs a screen will appear where you can select which to use.
 We can now change the settings of the delay. Tap on it to get up the
 controls. Many modules have extra controls in the side menus.
 \begin{center}
-\includegraphics[width=0.9\textwidth]{\string"D:/photos/Digit_screenshots/design/2020-06-26 17_26_07-Digit 2\string".png}
+\includegraphics[width=0.9\textwidth]{\string"manual_images/design/2020-06-26 17_26_07-Digit 2\string".png}
 \par\end{center}
 
 \subsection{Knobs}
@@ -139,15 +142,29 @@ a set list option. This is what order you move through the presets
 in your set list when pressing both center and right or center and
 left foot switches together.
 
-\subsection{Foot switches}
+\subsection{Toggle Effects with Foot switches}
 
 By default, the right most foot switch is bypass and the two others
 don't do anything. Foot switches can act as tempo sources or as control
-sources. To connect a foot switch to something, first tap add (+)
-and then select foot switch A or B. A is the left one, B is the center,
-C is the right.
+sources. 
+
+If you just want to enable or disable something with a foot switch,
+hold the module you want to control and the press the physical foot
+switch you want to use. A small letter in a circle will appear showing
+the foot switch you choose to use. You can remap all 3 foot switches
+like this. You can also assign a single foot switch to multiple modules. 
+
+If you want to toggle between to delays for example, set one to disabled
+then assign both to the same foot switch, they will now toggle which
+is active.
+
+\subsection{Foot Switches as CV or Tempo Sources}
+
+If you want to control a specific parameter with a foot switch, tap
+add (+) and then select foot switch A or B. A is the left one, B is
+the center, C is the right.
 \begin{center}
-\includegraphics[width=0.9\textwidth]{\string"D:/photos/Digit_screenshots/design/2020-06-26 17_33_59-Digit 2\string".png}
+\includegraphics[width=0.9\textwidth]{\string"manual_images/design/2020-06-26 17_33_59-Digit 2\string".png}
 \par\end{center}
 
 Now tap the foot switch module you've added and then tap connect.
@@ -156,11 +173,11 @@ outputs, the tap tempo and its value. Value is if it's up or pressed
 down. To connect tap tempo from the foot switch, hold the foot swtich
 and tap the delay. Then choose the BPM out.
 \begin{center}
-\includegraphics[width=0.9\textwidth]{\string"D:/photos/Digit_screenshots/design/2020-06-26 17_34_26-Digit 2\string".png}
+\includegraphics[width=0.9\textwidth]{\string"manual_images/design/2020-06-26 17_34_26-Digit 2\string".png}
 \par\end{center}
 
 \begin{center}
-\includegraphics[width=0.9\textwidth]{\string"D:/photos/Digit_screenshots/design/2020-06-26 17_35_03-Digit 2\string".png}
+\includegraphics[width=0.9\textwidth]{\string"manual_images/design/2020-06-26 17_35_03-Digit 2\string".png}
 \par\end{center}
 
 \subsection{LFO / control signals}
@@ -170,19 +187,19 @@ we now add a low frequency oscillator (LFO) we can use that to control
 other settings on the delay. Add the LFO then hold it and tap the
 delay. Then choose warp in the screen that appears.
 \begin{center}
-\includegraphics[width=0.9\textwidth]{\string"D:/photos/Digit_screenshots/design/2020-06-26 17_34_43-Digit 2\string".png}
+\includegraphics[width=0.9\textwidth]{\string"manual_images/design/2020-06-26 17_34_43-Digit 2\string".png}
 \par\end{center}
 
 Control signals are coloured green.
 \begin{center}
-\includegraphics[width=0.9\textwidth]{\string"D:/photos/Digit_screenshots/design/2020-06-26 17_36_08-Digit 2\string".png}
+\includegraphics[width=0.9\textwidth]{\string"manual_images/design/2020-06-26 17_36_08-Digit 2\string".png}
 \par\end{center}
 
 The effect will be quite strong, so if we want to reduce we can tap
 on the LFO and reduce the level. A uni polar LFO will only got from
 0-1 (positive) but if you set that to zero it'll go negative and positive.
 \begin{center}
-\includegraphics[width=0.9\textwidth]{\string"D:/photos/Digit_screenshots/design/2020-06-26 17_55_25-Digit 2\string".png}
+\includegraphics[width=0.9\textwidth]{\string"manual_images/design/2020-06-26 17_55_25-Digit 2\string".png}
 \par\end{center}
 
 We can also add other modules in between such as the attenuverter
@@ -190,7 +207,7 @@ that act on the control signals. We can invert the phase or reduce
 the level with this as well, in case we want the same LFO to control
 two different things at different amounts or phase.
 \begin{center}
-\includegraphics[width=0.9\textwidth]{\string"D:/photos/Digit_screenshots/design/2020-06-26 17_36_50-Digit 2\string".png}
+\includegraphics[width=0.9\textwidth]{\string"manual_images/design/2020-06-26 17_36_50-Digit 2\string".png}
 \par\end{center}
 
 The attenuverter attenuates and/or inverts a signal. It has two inputs
@@ -200,28 +217,18 @@ you ring mod / AM style control possibilities.
 
 \subsection{Firmware update}
 
-If you currently have version 1.something (eg 1.7) firmware installed
-(check in the setting menu) get all the packages in the 'upgrade\_from\_1'
-folder from here and put them on a usb flash drive. Tap upgrade firmware
-and wait while nothing appears to happen for about 20 minutes. When
-you press the firmware update button there's no feedback and nothing
-happens at all, it is working but the early firmware update interface
-is pretty terrible. Just walk off and come back in a bit. The pedal
-should automatically restart with the new firmware. If it hasn't restarted
-after 35 minutes, panic and contact me. It takes quite a while. Updates
-in the 2 series only take a minute or two. 
+If you have a very early Digit and currently have version 1.something
+(eg 1.7) firmware installed (check in the setting menu) please contact
+me before updating. 
 
-The text that comes up at the end will have many messages and one
-of the messages will say : 'Failed to unmount media.' This is okay.
-Don’t turn it off then. It’ll will restart itself soon
-
-A full video on how to copy the files and update is available here: 
-
-\url{https://youtu.be/5fXnT4UiqGQ}
-
-If you have version 2 installed, please grab just the 2 packages in
-the 'upgrade\_from\_2' folder from here and put them on a usb flash
-drive and click upgrade. It should be very quick. It'll restart itself.
+For Beebo or January 2020 or later versions of Digit, please grab
+the packages in the 'upgrade\_from\_2' folder from here and put them
+on a usb flash drive and click upgrade. It should be very quick. It'll
+restart itself. The packages need to all be on the USB drive and not
+in a zip. The current packages are frontend, modules, ingen and extra-content.
+If you've updated recently and know that one file hasn't changed then
+you don't need to include it on the USB flash drive next update and
+it'll update a little faster.
 
 The USB flash drive must be formatted FAT32 and have one partition
 on it. If the update fails, please try pressing export presets in
@@ -248,20 +255,20 @@ it’s always safer just to effect things like delays / reverb tails.
 
 Tap a delay to see the details.
 \begin{center}
-\includegraphics[width=0.9\textwidth]{\string"D:/photos/Digit_screenshots/design/2020-06-26 17_42_52-Digit 2\string".png}
+\includegraphics[width=0.9\textwidth]{\string"manual_images/design/2020-06-26 17_42_52-Digit 2\string".png}
 \par\end{center}
 
 There are two modes. If you choose beats you can set a BPM and then
 choose a subdivision in the right drop down menu. 
 \begin{center}
-\includegraphics[width=0.9\textwidth]{\string"D:/photos/Digit_screenshots/design/2020-06-26 17_43_25-Digit 2\string".png}
+\includegraphics[width=0.9\textwidth]{\string"manual_images/design/2020-06-26 17_43_25-Digit 2\string".png}
 \par\end{center}
 
 You can also set time in milliseconds, tap the time button and then
 you can type in a number if you press the milliseconds field, or just
 slide the slider to an approximate position.
 \begin{center}
-\includegraphics[width=0.9\textwidth]{\string"D:/photos/Digit_screenshots/design/2020-06-26 17_43_36-Digit 2\string".png}
+\includegraphics[width=0.9\textwidth]{\string"manual_images/design/2020-06-26 17_43_36-Digit 2\string".png}
 \par\end{center}
 
 The amount of milliseconds won't follow your tap tempo, so if you
@@ -276,111 +283,24 @@ and tap Copy IRs. The files must be 48 kHz wavs.
 
 \subsection{Import / Export Presets}
 
-\section{Digit Modules}
+Press the floppy disk icon to get to the preset screen. Then press
+export preset where it'll ask you if you want to export the current
+preset or all presets.
 
-\subsection{Amp Bass Svt40 }
+\section{MIDI}
 
-\subsection{Attenuverter }
+\subsection{Changing Presets}
 
-The attenuverter attenuates and/or inverts a control signal. It has
-two inputs which can be either be controlled by the sliders or by
-a control input. So you can attenuate / invert one control signal
-with another giving you ring mod / AM style control possibilities.
-Parameters: output = multiplicand {*} multiplier.
+To change a preset with a program message, press the floppy disk icon
+to get to the preset screen. Tap set list and add preset here. The
+number next to them is what program change message you should send
+to change to that preset. This is also the order the foot switch pairs
+with D and E will step through them. 
 
-\subsection{Auto Swell }
+\subsection{CC Controls}
 
-\subsection{Delay}
-\begin{center}
-\includegraphics[width=0.9\textwidth]{\string"D:/photos/Digit_screenshots/design/2020-06-26 17_26_07-Digit 2\string".png}
-\par\end{center}
-
-This is a delay with controllable read and write heads. Attach a footswitch
-module to use tap tempo.
-
-\subsubsection{parameters}
-\begin{description}
-\item [{Tme:}] delay time in beats. 
-\item [{Bpm:}] tempo in beats per minute. Connect a footswitch module to
-this to use tap tempo. 
-\item [{Feedback:}] number of repeats 
-\item [{Tone:}] blends between a tape style and digital style delay 
-\item [{Level:}] level of the repeats 
-\item [{Warp:}] the read head of the delay. Modulate this to get warble. 
-\item [{Glide:}] how slowly a time change occurs. Effects warp and time. 
-\end{description}
-
-\subsection{Env Follower }
-
-\subsection{Filter }
-
-\subsection{Foot Switch A / B / C }
-
-Connect level out to any control input or BPM out to any BPM input. 
-
-\subsection{Freeze }
-
-Holds what you're playing when the control level is active (1), creating
-a drone.
-
-\subsection{LFO }
-\begin{center}
-\includegraphics[width=0.9\textwidth]{\string"D:/photos/Digit_screenshots/design/2020-06-26 17_55_25-Digit 2\string".png}
-\par\end{center}
-
-Low Frequency Oscillator, this sends a control signal out and can
-modulate other parameters. 
-
-\subsection{Mix VCA }
-
-\subsection{Mono EQ / Stereo EQ }
-
-A power parametric EQ, available in mono or stereo versions. 
-
-\subsection{Mono Cab}
-
-Load a cab IR. 
-
-\subsection{Mono Reverb / Stereo Reverb}
-
-Convolution based reverb. The mono version loads a mono IR file, 1
-in 1 out. The stereo version loads a stereo IR, 1 in 2 out. 
-
-\subsection{Pan }
-
-\subsection{Power Amp Cream}
-
-\subsection{Power Amp Super}
-
-\subsection{Reverse}
-
-Reverse the incoming sound, by dividing it up into fragments. Try
-very long or very short fragment lengths. 
-
-\subsection{Saturator }
-
-A tape emulating compressor. Push input gain up for more effect and
-then balance level. 
-
-\subsection{Slew Limiter}
-
-Changes how fast a control signal changes. Connect it up to things
-like foot switches to change them from being instant to slowly swelling. 
-
-\subsection{Quad IR Cab / Quad IR Reverb}
-
-Loads a quad channel IR, 2 in 2 out. Most likely not what you want.
-Don’t use this unless you’ve got the right IR files and you’re sure
-you need it. 
-
-\subsection{Turntable Stop}
-
-Emultates turning off a turntable. Works well connected to a foot
-switch. 
-
-\subsection{Warmth}
-
-This blends between tape and tube style warmth/overdrive. 
+To learn a control, press the MIDI icon next to the slider. It will
+then pulse until it detects a CC.
 
 \section{Regulatory / Licencing}
 
@@ -398,6 +318,6 @@ here: \url{https://github.com/polyeffects/}
 A giant collection of people have helped Poly Effects and Digit specifically.
 These include Helen Davison (my mum), Claire Jeddou, Celeste Reno,
 Jo Gardiner, David Robillard, Michelle Lam, Bernie Tschirren, Lisa
-Bryant, Ed Pettersen, Josh Smith, Jordan Rudess, Filipe Coelho and
-Robin Gareus. 
+Bryant, Ed Pettersen, Josh Smith, Jordan Rudess, Leon Todd, Filipe
+Coelho and Robin Gareus. 
 \end{document}
