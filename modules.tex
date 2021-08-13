@@ -1,18 +1,96 @@
-\section{Effects}
+\subsection{Ad Env Level}
+
+An attack decay envelope generator with start and end levels. Works with a trigger.
+
+Envelopes take in a  trigger and produce a CV that changes over time.
+                  This version has just 2 stages, attack and decay. Connect triggers to the envelope and then connect the envelope output to the parameter you want to change over time.
+                  This version adds a level to attack to and then decay to compared to the standard version.
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Gate, Reset Level, Trigger
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Envelope Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Attack Time
+\item Attack To Level
+\item Decay Time
+\item Decay To Level
+\item Initial Level
+\end{itemize}
+
+\subsection{Ad Envelope}
+
+A attack decay envelope generator. Works with a trigger.
+
+Envelopes take in a trigger and produce a CV that changes over time.
+                  This version has just 2 stages, attack and decay. Connect triggers to the envelope and then connect the envelope output to the parameter you want to change over time.
+                  This version attacks to 1 from 0.
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Gate, Trigger
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Envelope Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Attack Time
+\item Decay Time
+\end{itemize}
+
+\subsection{Adsr}
+
+Basic ADSR envelope generator. Takes in a gate.
+
+Envelopes take in a  trigger and produce a CV that changes over time.
+                  This version has 4 stages, attack, decay, sustain and release. Connect triggers to the envelope and then connect the envelope output to the parameter you want to change over time.
+                  This is an important part of a synthesis but can also be used to create things like autoswells. Useful when connected to a VCA.
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Driving Signal
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Envelope Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Attack Time
+\item Decay Time
+\item Release Time
+\item Sustain Level
+\item Trigger Threshold
+\end{itemize}
 
 \subsection{Algo Reverb}
 
-Included in Beebo And Digit.
-
-A special effects algorthmic reverb, featuring longer tails than the convolution reverb.
+A special effects algorthmic reverb, featuring longer tails than the convolution reverb. Based Parasites Oliverb firmware of Mutable Intruments Clouds module. 
 
 This eurorack based algorithmic reverb is designed to be modulated by control values.
                  It's great for special effects, and general weirdness. It isn't well suited to realistic sounds. It's capable of pitch shifting and self oscilliation.
 
+Please see the \href{https://mqtthiqs.github.io/parasites/clouds.html}{original module manual} for more details.
+
+This video is helpful: \url{https://youtu.be/apgmvYbG_zQ}.
+
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] L In, R In
 \item [CV] Blend, Damp, Decay, Diffusion, Hold, Modulation Amount, Modulation Speed, Pitch, Reverse, Size, Trigger, Pre-Delay
+\item [Audio] L In, R In
 \end{description}
 
 \subsubsection{Outputs}
@@ -36,8 +114,6 @@ This eurorack based algorithmic reverb is designed to be modulated by control va
 \end{itemize}
 
 \subsection{Amp Bass}
-
-Included in Digit.
 
 SVT40 bass amp sim
 
@@ -65,9 +141,30 @@ A bass amp emulation. The tone stack has sections that can be tuned. Run a cab a
 \item Volume
 \end{itemize}
 
-\subsection{Auto Swell}
+\subsection{Attenuverter}
 
-Included in Beebo And Digit.
+The attenuverter changes level and/or phase of a control signal. A x B
+
+An attenuverter attenuates and inverts signals.
+                  You can combine signals using it, for example to ring modulate two LFOs together, or just reduce the level of a CV
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] A, B
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Product
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item A
+\item B
+\end{itemize}
+
+\subsection{Auto Swell}
 
 Automatically swells volume to remove note attack
 
@@ -75,8 +172,8 @@ Auto swell is a similar effect to using your volume knob but instead it automati
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] In
 \item [CV] Threshold
+\item [Audio] In
 \end{description}
 
 \subsubsection{Outputs}
@@ -93,16 +190,18 @@ Auto swell is a similar effect to using your volume knob but instead it automati
 
 \subsection{Bitmangle}
 
-Included in Beebo And Digit.
-
-Brutal bitmangler. Warning, can get very loud.
+Brutal bitmangler. Warning, can get very loud. Based on Mutable Instuments Warps Parasite.
 
 The bit mangler isn't a normal bit crusher, instead it degredation and cross modulationthe bitwise AND is much louder than the bitwise XOR end, so I recommend a compressor or something aftwards to control levels.
 
+Please see the \href{https://mqtthiqs.github.io/parasites/warps.html}{original module manual} for more details.
+
+This video is helpful: \url{}.
+
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] Carrier, Modulator
 \item [CV] Bit Cv, Input Amp 2 Cv, Input Amp Cv, Xor Vs And Cv
+\item [Audio] Carrier, Modulator
 \end{description}
 
 \subsubsection{Outputs}
@@ -119,9 +218,53 @@ The bit mangler isn't a normal bit crusher, instead it degredation and cross mod
 \item Xor Vs And
 \end{itemize}
 
-\subsection{Chorus D}
+\subsection{Chaos Controller}
 
-Included in Beebo.
+Powerful repeatable randomness source. Based on Mutable Instruments Marbles module.
+
+A source of random gates and voltages, which offers an extensive amount of (voltage) control on all the different flavors of randomness it produces. The module gives the musician many different ways of imposing structure on the random events generated by the module: synchronization to external clocks, control of the repetition or novelty of the generated material, quantization of the voltages, or randomization of gates or voltages generated by traditional sequencers.
+
+Please see the \href{https://www.mutable-instruments.net/modules/marbles/manual/}{original module manual} for more details.
+
+This video is helpful: \url{https://youtu.be/NkGkHuS69a0}.
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Deja Vu Input, T Bias Input, T Clock Trigger Input, T Jitter Input, T Rate Input, X Bias Input, X Clock Input, X Spread Input, X Steps Input
+\item [Tempo] Bpm T Clock
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] T1 Output, T2 Output, T3 Output, X1 Output, X2 Output, X3 Output, Y Output
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Deja Vu Length
+\item Deja Vu Probablity
+\item External
+\item T Clock Bpm
+\item T Deja Vu
+\item T Gate Bias
+\item T Jitter
+\item T Mode
+\item T Range
+\item X Clock Source Internal
+\item X Deja Vu
+\item X Distribution Bias
+\item X Mode
+\item X Range
+\item X Scale
+\item X Smoothness Steps
+\item X Spread
+\item Y Distribution Bias
+\item Y Divider
+\item Y Smoothness
+\item Y Spread
+\end{itemize}
+
+\subsection{Chorus D}
 
 8 voice multi dimensional chorus
 
@@ -148,16 +291,14 @@ Included in Beebo.
 
 \subsection{Chorus D Ext}
 
-Included in Beebo.
-
 8 voice multi dimensional chorus CV LFO
 
 
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] In
 \item [CV] Lfo Cv
+\item [Audio] In
 \end{description}
 
 \subsubsection{Outputs}
@@ -172,9 +313,72 @@ Included in Beebo.
 \item Deviation
 \end{itemize}
 
-\subsection{Delay}
+\subsection{Cv To Midi Cc}
 
-Included in Beebo And Digit.
+convert control to MIDI CC
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Cv In
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [MIDI] Midi Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Cc Number
+\item Channel
+\item Resolution
+\end{itemize}
+
+\subsection{Cv To Trigger}
+
+A Schmitt trigger that converts external analog CV to digital on / off trigger
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Trigger
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Out Trigger
+\end{description}
+
+\subsection{Dahdsr}
+
+A delay attack hold decay sustain release envelope generator
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Attack Time, Decay Time, Delay Time, Gate, Hold Time, Release Time, Sustain Level, Trigger
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Envelope Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Attack Time
+\item Decay Time
+\item Delay Time
+\item Hold Time
+\item Release Time
+\item Sustain Level
+\end{itemize}
+
+\subsection{Delay}
 
 Flexible delay module. Add modules on the repeats for variations.
 
@@ -182,9 +386,9 @@ Flexible delay module. Add modules on the repeats for variations.
 
 \subsubsection{Inputs}
 \begin{description}
+\item [CV] Feedback, Glide, Level, Time, Tone, Warp
 \item [Audio] In
 \item [Tempo] Bpm
-\item [CV] Feedback, Glide, Level, Time, Tone, Warp
 \end{description}
 
 \subsubsection{Outputs}
@@ -204,18 +408,65 @@ Flexible delay module. Add modules on the repeats for variations.
 \item Warp
 \end{itemize}
 
-\subsection{Doppler Panner}
+\subsection{Difference}
 
-Included in Beebo.
-
-binaural panner, allows positioning in 3D.
+a - b for control signals
 
 
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] Left In, Right In
+\item [CV] A Cv, B Cv
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Output
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item A
+\item B
+\end{itemize}
+
+\subsection{Diode Ladder Lpf}
+
+A diode ladder low pass filter similar to the vintage Japanese designs
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Cutoff Cv, Q Cv
+\item [Audio] In
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [Audio] Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Cutoff
+\item Q
+\end{itemize}
+
+\subsection{Doppler Panner}
+
+binaural panner, allows positioning in 3D. Based on Parasite firware of Warps by Mutable Instruments.
+
+
+
+Please see the \href{https://mqtthiqs.github.io/parasites/warps.html}{original module manual} for more details.
+
+This video is helpful: \url{https://youtu.be/baHiSGgszQ4}.
+
+\subsubsection{Inputs}
+\begin{description}
 \item [CV] Lfo Frequency Cv, Lfo Amplitude Cv, X Coordinate Cv, Y Coordinate Cv
+\item [Audio] Left In, Right In
 \end{description}
 
 \subsubsection{Outputs}
@@ -232,9 +483,134 @@ binaural panner, allows positioning in 3D.
 \item Y Coordinate
 \end{itemize}
 
-\subsection{Flanger}
+\subsection{Drum Patterns}
 
-Included in Beebo.
+Drum trigger explorer. Based on Grids by Mutable Instruments.
+
+
+
+Please see the \href{https://mutable-instruments.net/modules/grids/manual/}{original module manual} for more details.
+
+This video is helpful: \url{https://youtu.be/l5yN0N6aTws}.
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Bd Fill Cv, Chaos Cv, Clock, Hh Fill Cv, Map X Cv, Map Y Cv, Reset, Run, Sn Fill Cv, Swing Cv
+\item [Tempo] Bpm
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Bass Drum Accent, Bass Drum Trigger, Hihat Accent, Hihat Trigger, Snare Accent, Snare Trigger
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Bass Drum Density
+\item Chaos
+\item Hihat Density
+\item Map X
+\item Map Y
+\item Reset Button
+\item Run Button
+\item Snare Density
+\item Swing
+\item Tempo
+\end{itemize}
+
+\subsection{Env Follower}
+
+Track an input signal and convert it into a control signal
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [Audio] Audio In
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Cv Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Attack Time
+\item Decay Time
+\item Invert
+\item Maximum Value
+\item Minimum Value
+\item Peak/Rms
+\item Saturation
+\item Threshold
+\end{itemize}
+
+\subsection{Euclidean}
+
+A euclidean sequencer with 4 tracks. Connect a trigger to go to the next step
+
+The is the one outputs are triggered on the first beat and can be used to chain sequencers.
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Back Trigger, Reset Trigger, Step Trigger
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Is The One 1, Is The One 2, Is The One 3, Is The One 4, Trigger Out1, Trigger Out2, Trigger Out3, Trigger Out4
+\item [Tempo] Tempo Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Loop 1 Beats
+\item Loop 1 Is Enabled
+\item Loop 1 Shift
+\item Loop 1 Steps
+\item Loop 2 Beats
+\item Loop 2 Is Enabled
+\item Loop 2 Shift
+\item Loop 2 Steps
+\item Loop 3 Beats
+\item Loop 3 Is Enabled
+\item Loop 3 Shift
+\item Loop 3 Steps
+\item Loop 4 Beats
+\item Loop 4 Is Enabled
+\item Loop 4 Shift
+\item Loop 4 Steps
+\end{itemize}
+
+\subsection{Filter}
+
+Virtual analog resonant low pass filter
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Exp Fm, Fm, Resonance Mod
+\item [Audio] Input
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [Audio] Output
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Exp. Fm Gain
+\item Frequency
+\item Input Gain
+\item Output Gain
+\item Resonance
+\item Resonance Gain
+\end{itemize}
+
+\subsection{Flanger}
 
 flanger with internal LFO
 
@@ -263,16 +639,14 @@ flanger with internal LFO
 
 \subsection{Flanger Ext}
 
-Included in Beebo.
-
 flanger with CV for LFO
 
 
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] In
 \item [CV] Lfo Cv
+\item [Audio] In
 \end{description}
 
 \subsubsection{Outputs}
@@ -288,18 +662,126 @@ flanger with CV for LFO
 \item Invert
 \end{itemize}
 
+\subsection{Foot Switch A}
+
+The left footswitch. Also available in Hector to allow patch compatability.
+
+
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Value Out
+\item [Tempo] Bpm Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Bpm
+\item Is Latching
+\item Off Value
+\item On Value
+\item Value
+\item Value
+\end{itemize}
+
+\subsection{Foot Switch B}
+
+The center footswitch. Also available in Hector to allow patch compatability.
+
+
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Value Out
+\item [Tempo] Bpm Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Bpm
+\item Is Latching
+\item Off Value
+\item On Value
+\item Value
+\item Value
+\end{itemize}
+
+\subsection{Foot Switch C}
+
+The right footswitch. Also available in Hector to allow patch compatability.
+
+
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Value Out
+\item [Tempo] Bpm Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Bpm
+\item Is Latching
+\item Off Value
+\item On Value
+\item Value
+\item Value
+\end{itemize}
+
+\subsection{Foot Switch D}
+
+The left and centre right footswitch. Also available in Hector to allow patch compatability.
+
+
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Value Out
+\item [Tempo] Bpm Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Bpm
+\item Is Latching
+\item Off Value
+\item On Value
+\item Value
+\item Value
+\end{itemize}
+
+\subsection{Foot Switch E}
+
+The right and centre footswitch. Also available in Hector to allow patch compatability.
+
+
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Value Out
+\item [Tempo] Bpm Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Bpm
+\item Is Latching
+\item Off Value
+\item On Value
+\item Value
+\item Value
+\end{itemize}
+
 \subsection{Freeze}
 
-Included in Beebo And Digit.
-
-Holds what you’re playing when the control level is active, creating a drone.
+Holds what you are playing when the control levelis active, creating a drone.
 
 
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] Audio In
 \item [CV] Freeze
+\item [Audio] Audio In
 \end{description}
 
 \subsubsection{Outputs}
@@ -314,9 +796,43 @@ Holds what you’re playing when the control level is active, creating a drone.
 \item Release
 \end{itemize}
 
-\subsection{Harmonic Trem Ext}
+\subsection{Granular}
 
-Included in Beebo And Digit.
+Granular texture generator, can work as a weird delay or reverb. Based on Parasite firmware of Mutable Instruments Clouds.
+
+
+
+Please see the \href{https://www.mutable-instruments.net/modules/clouds/manual/}{original module manual} for more details.
+
+This video is helpful: \url{https://youtu.be/g_Gue_MZ-Dk}.
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Blend, Density, Freeze, Pitch, Position, Reverb, Reverse, Size, Spread, Texture, Trigger, Feedback
+\item [Audio] L In, R In
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [Audio] L Out, R Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Blend
+\item Density
+\item Feedback
+\item Freeze
+\item Pitch
+\item Position
+\item Reverb
+\item Reverse
+\item Size
+\item Spread
+\item Texture
+\end{itemize}
+
+\subsection{Harmonic Trem Ext}
 
 harmonic tremolo CV LFO input
 
@@ -324,8 +840,8 @@ harmonic tremolo CV LFO input
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] In
 \item [CV] Lfo Cv
+\item [Audio] In
 \end{description}
 
 \subsubsection{Outputs}
@@ -340,8 +856,6 @@ harmonic tremolo CV LFO input
 \end{itemize}
 
 \subsection{Harmonic Tremolo}
-
-Included in Beebo And Digit.
 
 harmonic tremolo with internal LFO
 
@@ -367,16 +881,14 @@ harmonic tremolo with internal LFO
 
 \subsection{J Chorus}
 
-Included in Beebo.
-
 chorus based on vintage Japanese synth chorus
 
 
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] Audio Input 1, Audio Input 2
 \item [CV] 1 Enable, 2 Enable
+\item [Audio] Audio Input 1, Audio Input 2
 \end{description}
 
 \subsubsection{Outputs}
@@ -392,18 +904,126 @@ chorus based on vintage Japanese synth chorus
 \item Chorus 2 On/Off
 \end{itemize}
 
-\subsection{Looping Delay}
+\subsection{K Org Hpf}
 
-Included in Beebo And Digit.
-
-granular pitch shifting, micro looping delay
+A high pass filter similar to the vintage Japanese designs
 
 
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] L In, R In
+\item [CV] Cutoff Cv, Q Cv
+\item [Audio] In
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [Audio] Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Cutoff
+\item Q
+\end{itemize}
+
+\subsection{K Org Lpf}
+
+A low pass filter similar to the vintage Japanese designs
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Cutoff Cv, Q Cv
+\item [Audio] In
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [Audio] Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Cutoff
+\item Q
+\end{itemize}
+
+\subsection{Lfo}
+
+Low frequency oscillator, send a control signal.
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Reset
+\item [Tempo] Bpm
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Output
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Level
+\item Shape Mod
+\item Tempo
+\item Tempo Multiplier
+\item Unipolar
+\item Wave Form
+\end{itemize}
+
+\subsection{Loop Common In}
+
+Common input to the loopler
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [Audio] Out
+\end{description}
+
+\subsection{Loop Common Out}
+
+Common output from the loopler
+
+
+
+\subsubsection{Outputs}
+\begin{description}
+\item [Audio] In
+\end{description}
+
+\subsection{Loop Extra Midi}
+
+Connect internal MIDI generators to the Looper, do not connect external MIDI here, will duplicate.
+
+For example trigger loops with a chaos controller module connected to a CV to CC then to this.
+
+\subsubsection{Inputs}
+\begin{description}
+\item [MIDI] Out
+\end{description}
+
+\subsection{Looping Delay}
+
+Granular pitch shifting, micro looping delay. Based on Parasite firmware of Clouds by Mutable Instruments.
+
+
+
+Please see the \href{https://mqtthiqs.github.io/parasites/clouds.html}{original module manual} for more details.
+
+This video is helpful: \url{https://youtu.be/6ltvGv43J3A}.
+
+\subsubsection{Inputs}
+\begin{description}
 \item [CV] Blend, Diffusion, Filter, Loop, Pitch, Reverb, Reverse, Spread, Trigger, Feedback, Pitch Window, Tape Length
+\item [Audio] L In, R In
 \end{description}
 
 \subsubsection{Outputs}
@@ -426,9 +1046,240 @@ granular pitch shifting, micro looping delay
 \item Tape Length
 \end{itemize}
 
-\subsection{Mono Eq}
+\subsection{Looping Envelope}
 
-Included in Beebo And Digit.
+A powerful envelope and LFO generator.
+Based on Tides by Mutable Instruments. 
+
+Based on Tides by Mutable Instruments.
+
+Please see the \href{https://www.mutable-instruments.net/modules/tides/manual/}{original module manual} for more details.
+
+This video is helpful: \url{https://www.youtube.com/watch?v=SVfmMq_VcuI}.
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Clock, Frequency, Shape, Shift, Slope, Smoothness, Trigger, V Per Oct
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Out1, Out2, Out3, Out4
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Frequency
+\item Frequency
+\item Mode
+\item Ramp
+\item Range
+\item Shape
+\item Shape
+\item Shift
+\item Shift
+\item Slope
+\item Slope
+\item Smoothness
+\item Smoothness
+\end{itemize}
+
+\subsection{Macro Osc}
+
+A powerful multi model oscillator voice. Based on Mutable Instruments Plaits module.
+
+
+
+Please see the \href{https://www.mutable-instruments.net/modules/plaits/manual/}{original module manual} for more details.
+
+This video is helpful: \url{https://youtu.be/_zYwdcYECdg}.
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] V Per Oct Cv, Engine Cv, Frequency Cv, Harmonics Cv, Level Cv, Morph Cv, Timbre Cv, Trigger Cv
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [Audio] Aux, Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Frequency
+\item Frequency Mod
+\item Harmonics
+\item Lpg Color
+\item Lpg Decay
+\item Model
+\item Morph
+\item Morph Mod
+\item Timbre
+\item Timbre Mod
+\end{itemize}
+
+\subsection{Max}
+
+max of a, b also logical or
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] A Cv, B Cv
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Output
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item A
+\item B
+\end{itemize}
+
+\subsection{Meta Modulation}
+
+A powerful cross modulation module which applies an algorithm to the two inputs. Based on Warps by Mutable Instruments.
+
+
+
+Please see the \href{https://www.mutable-instruments.net/modules/warps/manual/}{original module manual} for more details.
+
+This video is helpful: \url{https://youtu.be/iRLU5B4V-Jw}.
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Algorthm Cv, Level 1 Freq Cv, Level 2 Cv, Timbre Cv
+\item [Audio] Carrier, Modulator
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [Audio] Aux, Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Algorithm
+\item Level 1 Or Freq
+\item Level 2
+\item Shape
+\item Timbre
+\end{itemize}
+
+\subsection{Midi Cc}
+
+MIDI CC to control value
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [MIDI] Midi Input
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Output
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Cc Number
+\item Logarithmic
+\item Maximum
+\item Minimum
+\end{itemize}
+
+\subsection{Midi Clock In}
+
+MIDI Clock to BPM
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [MIDI] Midi Input
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [Tempo] Bpm
+\end{description}
+
+\subsection{Midi Clock Out}
+
+BPM to MIDI Clock
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [Tempo] Bpm
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [MIDI] Midi Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Bpm
+\end{itemize}
+
+\subsection{Midi Note To Cv}
+
+convert MIDI notes to v per octave pitch CVs
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [MIDI] Midi Input
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Gate, Pitch, Velocity
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Cent
+\item Channel
+\item Octave
+\item Panic
+\item Retrigger
+\item Semitone
+\end{itemize}
+
+\subsection{Min}
+
+min of a, b also logical and
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] A Cv, B Cv
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Output
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item A
+\item B
+\end{itemize}
+
+\subsection{Mono Eq}
 
 Mono multiband parametric EQ
 
@@ -483,16 +1334,14 @@ Mono multiband parametric EQ
 
 \subsection{Mono Cab}
 
-Included in Digit.
-
 Mono cab sim
 
 
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] In
 \item [CV] Output Gain
+\item [Audio] In
 \end{description}
 
 \subsubsection{Outputs}
@@ -507,8 +1356,6 @@ Mono cab sim
 \end{itemize}
 
 \subsection{Mono Compressor}
-
-Included in Beebo.
 
 RMS downward compressor with auto markup
 
@@ -537,16 +1384,14 @@ RMS downward compressor with auto markup
 
 \subsection{Mono Reverb}
 
-Included in Digit.
-
 Mono convolution based reverb.
 
 
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] In
 \item [CV] Output Gain
+\item [Audio] In
 \end{description}
 
 \subsubsection{Outputs}
@@ -561,9 +1406,88 @@ Mono convolution based reverb.
 \item Output Gain
 \end{itemize}
 
-\subsection{Pan}
+\subsection{Multi Resonator}
 
-Included in Beebo And Digit.
+Resonator building block simulating multiple vibrating structures. Based on Rings by Mutable Instruments.
+
+Please see the \href{https://www.mutable-instruments.net/modules/rings/manual/}{original module manual} for more details.
+
+This video is helpful: \url{https://youtu.be/O0IHt1JiRvk}.
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Brightness Mod, Damping Mod, Frequency Mod, Pitch, Position Mod, Structure Mod, Strum
+\item [Audio] In
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [Audio] Even, Odd
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Brightness
+\item Brightness Mod
+\item Damping
+\item Damping Mod
+\item Frequency
+\item Frequency Mod
+\item Internal Exicter
+\item Polyphony
+\item Position
+\item Position Mod
+\item Resonator
+\item Structure
+\item Structure Mod
+\end{itemize}
+
+\subsection{Onset Detect}
+
+detects when a note starts and sends a trigger
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [Audio] In
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Gate
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Onset Threshold
+\item Silence Threshold
+\end{itemize}
+
+\subsection{Oog Half Lpf}
+
+A low pass filter inspired by vintage American designs
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Cutoff Cv, Q Cv
+\item [Audio] In
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [Audio] Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Cutoff
+\item Q
+\end{itemize}
+
+\subsection{Pan}
 
 Control signal controlled panner
 
@@ -571,8 +1495,8 @@ Control signal controlled panner
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] In
 \item [CV] Pan Cv
+\item [Audio] In
 \end{description}
 
 \subsubsection{Outputs}
@@ -586,8 +1510,6 @@ Control signal controlled panner
 \end{itemize}
 
 \subsection{Phaser}
-
-Included in Beebo.
 
 Basic phaser
 
@@ -614,16 +1536,14 @@ Basic phaser
 
 \subsection{Phaser Ext}
 
-Included in Beebo.
-
 Mono phaser controlled by CV input
 
 
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] Audio Input 1
 \item [CV] Lfo Cv
+\item [Audio] Audio Input 1
 \end{description}
 
 \subsubsection{Outputs}
@@ -641,16 +1561,14 @@ Mono phaser controlled by CV input
 
 \subsection{Phaser Stereo Ext}
 
-Included in Beebo.
-
 Stereo phaser controlled by CV input
 
 
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] Audio Input 1, Audio Input 2
 \item [CV] Lfo Cv
+\item [Audio] Audio Input 1, Audio Input 2
 \end{description}
 
 \subsubsection{Outputs}
@@ -667,9 +1585,80 @@ Stereo phaser controlled by CV input
 \item Stereo Phase
 \end{itemize}
 
-\subsection{Power Amp Cream}
+\subsection{Pitch Detect}
 
-Included in Digit.
+BETA detects played notes and converts it volt per octave and MIDI
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [Audio] In
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Gate, V/Oct Pitch
+\item [MIDI] Midi Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Onset Threshold
+\item Pitch Detection Tolerance
+\item Silence Threshold
+\end{itemize}
+
+\subsection{Pitch Shift}
+
+a basic pitch shifter. It delays the input signal
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] V/Oct Pitch
+\item [Audio] Input
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [Audio] Output
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Dry Level
+\item Semitone Shift
+\item Wet Level
+\end{itemize}
+
+\subsection{Poly Note To Cv}
+
+convert poly MIDI notes to v per octave pitch CVs
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [MIDI] Midi Input
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Gate 1, Gate 2, Gate 3, Gate 4, Pitch 1, Pitch 2, Pitch 3, Pitch 4, Velocity
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Cent
+\item Channel
+\item Octave
+\item Panic
+\item Semitone
+\end{itemize}
+
+\subsection{Power Amp Cream}
 
 An attempt at a cream coloured power amp emulation.
 
@@ -695,8 +1684,6 @@ An attempt at a cream coloured power amp emulation.
 
 \subsection{Power Amp Super}
 
-Included in Digit.
-
 An attempt at a power amp emulation
 
 
@@ -719,9 +1706,29 @@ An attempt at a power amp emulation
 \item Volume
 \end{itemize}
 
-\subsection{Quad Ir Cab}
+\subsection{Product}
 
-Included in Digit.
+a times b for control signals
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] A Cv, B Cv
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Output
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item A
+\item B
+\end{itemize}
+
+\subsection{Quad Ir Cab}
 
 Requires quad channel IR. You do not want this unless you have special IRs
 
@@ -729,8 +1736,8 @@ Requires quad channel IR. You do not want this unless you have special IRs
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] Inl, Inr
 \item [CV] Gain
+\item [Audio] Inl, Inr
 \end{description}
 
 \subsubsection{Outputs}
@@ -746,16 +1753,14 @@ Requires quad channel IR. You do not want this unless you have special IRs
 
 \subsection{Quad Ir Reverb}
 
-Included in Digit.
-
 Convolution reverb. Quad channel IRs required.
 
 
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] Inl, Inr
 \item [CV] Output Gain
+\item [Audio] Inl, Inr
 \end{description}
 
 \subsubsection{Outputs}
@@ -770,9 +1775,113 @@ Convolution reverb. Quad channel IRs required.
 \item Output Gain
 \end{itemize}
 
-\subsection{Reverse}
+\subsection{Quantizer}
 
-Included in Beebo And Digit.
+quantize a v/oct signal to a musical scale.
+
+Feed in an LFO to make it play specific notes instead of smoothly changing between pitches
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Input
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Changed, Output
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item A
+\item A#
+\item B
+\item C
+\item C#
+\item D
+\item D#
+\item E
+\item F
+\item F#
+\item G
+\item G#
+\end{itemize}
+
+\subsection{Ratio}
+
+a divided by b for control signals
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] A Cv, B Cv
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Output
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item A
+\item B
+\end{itemize}
+
+\subsection{Rectify Value}
+
+rectify or get the absolute value of the input. 
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] A Cv
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Output
+\end{description}
+
+\subsection{Resonestor}
+
+dual voice four part resonator. Based on Parasite firmware of Clouds by Mutable Intstruments.
+
+
+
+Please see the \href{https://mqtthiqs.github.io/parasites/clouds.html}{original module manual} for more details.
+
+This video is helpful: \url{https://youtu.be/VOd5zx_WDyA}.
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Chord, Decay, Filter, Harmonics, Pitch, Random Mod, Reverse, Scatter, Spread, Switch Voice, Timbre, Trigger
+\item [Audio] L In, R In
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [Audio] L Out, R Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Chord
+\item Decay
+\item Filter
+\item Harmonics
+\item Pitch
+\item Random Mod
+\item Reverse
+\item Scatter
+\item Spread
+\item Switch Voice
+\item Timbre
+\end{itemize}
+
+\subsection{Reverse}
 
 Reverse effect. Try short fragment length for weird tremolo
 
@@ -780,8 +1889,8 @@ Reverse effect. Try short fragment length for weird tremolo
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] Input
 \item [CV] Dry Level, Wet Level
+\item [Audio] Input
 \end{description}
 
 \subsubsection{Outputs}
@@ -798,16 +1907,14 @@ Reverse effect. Try short fragment length for weird tremolo
 
 \subsection{Rotary}
 
-Included in Beebo.
-
 A rotating loudspeaker using physical modelling. Same sound as advanced.
 
 
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] Input
 \item [CV] Drum Brake, Drum Speed, Horn Brake, Horn Speed
+\item [Audio] Input
 \end{description}
 
 \subsubsection{Outputs}
@@ -826,16 +1933,14 @@ A rotating loudspeaker using physical modelling. Same sound as advanced.
 
 \subsection{Rotary Advanced}
 
-Included in Beebo.
-
 A rotating loudspeaker using physical modelling. Same sound, more controls.
 
 
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] Input
 \item [CV] Drum Brake, Drum Speed, Horn Brake, Horn Speed
+\item [Audio] Input
 \end{description}
 
 \subsubsection{Outputs}
@@ -883,9 +1988,28 @@ A rotating loudspeaker using physical modelling. Same sound, more controls.
 \item Q
 \end{itemize}
 
-\subsection{Saturator}
+\subsection{Sample Hold}
 
-Included in Beebo And Digit.
+sample and hold a CV value when a trigger goes high
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Input, Trigger
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Gate, Output
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Trigger Level
+\end{itemize}
+
+\subsection{Saturator}
 
 Nonlinear saturation and soft limiting.
 
@@ -893,8 +2017,8 @@ Nonlinear saturation and soft limiting.
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] Input
 \item [CV] Postgain, Pregain
+\item [Audio] Input
 \end{description}
 
 \subsubsection{Outputs}
@@ -908,9 +2032,110 @@ Nonlinear saturation and soft limiting.
 \item Pregain
 \end{itemize}
 
-\subsection{Stereo Eq}
+\subsection{Slew Limiter}
 
-Included in Beebo And Digit.
+Slows how fast a control signal changes. Useful with foot switches.
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] In
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Time Down
+\item Time Up
+\end{itemize}
+
+\subsection{Step Sequencer}
+
+16 Step sequencer with internal clock
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Back Gate, Play, Reset Trigger
+\item [Tempo] Bpm
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Value Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Back
+\item Bpm
+\item Glide
+\item Loop Steps
+\item Note Length
+\item Play
+\item Value 0
+\item Value 1
+\item Value 10
+\item Value 11
+\item Value 12
+\item Value 13
+\item Value 14
+\item Value 15
+\item Value 2
+\item Value 3
+\item Value 4
+\item Value 5
+\item Value 6
+\item Value 7
+\item Value 8
+\item Value 9
+\end{itemize}
+
+\subsection{Step Sequencer Ext}
+
+16 Step sequencer that takes in a trigger for next or previous
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Back Trigger, Reset Trigger, Step Trigger
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Value Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Glide
+\item Loop Steps
+\item Value 0
+\item Value 1
+\item Value 10
+\item Value 11
+\item Value 12
+\item Value 13
+\item Value 14
+\item Value 15
+\item Value 2
+\item Value 3
+\item Value 4
+\item Value 5
+\item Value 6
+\item Value 7
+\item Value 8
+\item Value 9
+\end{itemize}
+
+\subsection{Stereo Eq}
 
 Stereo multiband parametric EQ.
 
@@ -964,16 +2189,14 @@ Stereo multiband parametric EQ.
 
 \subsection{Stereo Cab}
 
-Included in Digit.
-
 Stereo cab sim. You normally do not want this. Requires stereo IRs.
 
 
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] In
 \item [CV] Output Gain
+\item [Audio] In
 \end{description}
 
 \subsubsection{Outputs}
@@ -988,8 +2211,6 @@ Stereo cab sim. You normally do not want this. Requires stereo IRs.
 \end{itemize}
 
 \subsection{Stereo Compress}
-
-Included in Beebo.
 
 RMS downward compressor with auto markup
 
@@ -1018,8 +2239,6 @@ RMS downward compressor with auto markup
 
 \subsection{Stereo Phaser}
 
-Included in Beebo.
-
 Basic stereo phaser
 
 
@@ -1046,16 +2265,14 @@ Basic stereo phaser
 
 \subsection{Stereo Reverb}
 
-Included in Digit.
-
 Stereo convolution reverb
 
 
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] In
 \item [CV] Output Gain
+\item [Audio] In
 \end{description}
 
 \subsubsection{Outputs}
@@ -1070,9 +2287,51 @@ Stereo convolution reverb
 \item Output Gain
 \end{itemize}
 
-\subsection{Thruzero Flange}
+\subsection{Sum}
 
-Included in Beebo.
+a + b for control signals
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] A Cv, B Cv
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Output
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item A
+\item B
+\end{itemize}
+
+\subsection{Tempo Ratio}
+
+ratio between a tempo, like 3/4 to input tempo
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [Tempo] Input Tempo
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [Tempo] Output Tempo
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item A
+\item B
+\end{itemize}
+
+\subsection{Thruzero Flange}
 
 Through Zero Flanger.
 
@@ -1080,8 +2339,8 @@ Through Zero Flanger.
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] Left In, Right In
 \item [CV] Depth, Depth Mod, Feedback, Mix, Rate
+\item [Audio] Left In, Right In
 \end{description}
 
 \subsubsection{Outputs}
@@ -1098,9 +2357,59 @@ Through Zero Flanger.
 \item Rate
 \end{itemize}
 
-\subsection{Turntable Stop}
+\subsection{Time Stretch}
 
-Included in Beebo And Digit.
+A granular time stretching and pitch shifting module. Based on Parasite firmware of Clouds by Mutable Instruments.
+
+
+
+Please see the \href{https://mqtthiqs.github.io/parasites/clouds.html}{original module manual} for more details.
+
+This video is helpful: \url{https://youtu.be/6ltvGv43J3A}.
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Blend, Diffusion, Filter, Freeze, Pitch, Position, Reverb, Reverse, Size, Spread, Trigger, Feedback
+\item [Audio] L In, R In
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [Audio] L Out, R Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Blend
+\item Diffusion
+\item Feedback
+\item Filter
+\item Freeze
+\item Pitch
+\item Position
+\item Reverb
+\item Reverse
+\item Size
+\item Spread
+\end{itemize}
+
+\subsection{Toggle}
+
+toggles the output value on every trigger
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Trigger
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [CV] Out Gate
+\end{description}
+
+\subsection{Turntable Stop}
 
 Simulates turning off a turntable. Connect a control to pull the plug.
 
@@ -1108,8 +2417,8 @@ Simulates turning off a turntable. Connect a control to pull the plug.
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] Audio In
 \item [CV] Decay Time, Pull The Plug
+\item [Audio] Audio In
 \end{description}
 
 \subsubsection{Outputs}
@@ -1126,16 +2435,18 @@ Simulates turning off a turntable. Connect a control to pull the plug.
 
 \subsection{Twist Delay}
 
-Included in Beebo And Digit.
-
-A delay where speed and length interact with quality
+A delay where speed and length interact with quality. Based on Parasite firmware of Warps by Mutable Instruments.
 
 
+
+Please see the \href{https://mqtthiqs.github.io/parasites/warps.html}{original module manual} for more details.
+
+This video is helpful: \url{https://youtu.be/baHiSGgszQ4}.
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] In 1, In 2
 \item [CV] Dry Wet Cv, Feedback Cv, Length Cv, Speed Direction Cv
+\item [Audio] In 1, In 2
 \end{description}
 
 \subsubsection{Outputs}
@@ -1152,9 +2463,52 @@ A delay where speed and length interact with quality
 \item Speed Direction
 \end{itemize}
 
-\subsection{Vibrato}
+\subsection{Uberheim Filter}
 
-Included in Beebo.
+A multi out filter inspired by vintage American designs
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Cutoff Cv, Q Cv
+\item [Audio] In
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [Audio] Band Pass, Band Stop, High Pass, Low Pass
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Cutoff
+\item Q
+\end{itemize}
+
+\subsection{Vca}
+
+simple voltage controlled amplifier
+
+
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Gain
+\item [Audio] Input
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [Audio] Output
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Gain
+\end{itemize}
+
+\subsection{Vibrato}
 
 vibrato with internal LFO
 
@@ -1187,16 +2541,14 @@ vibrato with internal LFO
 
 \subsection{Vibrato Ext}
 
-Included in Beebo.
-
 vibrato with CV LFO
 
 
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] In
 \item [CV] Lfo Cv
+\item [Audio] In
 \end{description}
 
 \subsubsection{Outputs}
@@ -1218,16 +2570,14 @@ vibrato with CV LFO
 
 \subsection{Warmth}
 
-Included in Beebo And Digit.
-
 Tube triode emulation
 
 
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] Input
 \item [CV] Drive, Tape--Tube Blend
+\item [Audio] Input
 \end{description}
 
 \subsubsection{Outputs}
@@ -1241,9 +2591,37 @@ Tube triode emulation
 \item Tape--Tube Blend
 \end{itemize}
 
-\subsection{Wet Dry}
+\subsection{Wavefolder}
 
-Included in Beebo And Digit.
+Chebyshev wave folder. Based on Parasite firmware of Warps by Mutable Instruments. 
+
+
+
+Please see the \href{https://mqtthiqs.github.io/parasites/warps.html}{original module manual} for more details.
+
+This video is helpful: \url{https://youtu.be/baHiSGgszQ4}.
+
+\subsubsection{Inputs}
+\begin{description}
+\item [CV] Input Amp 2 Cv, Input Amp Cv, Input Bias Cv, Num Fold Cv
+\item [Audio] Carrier, Modulator
+\end{description}
+
+\subsubsection{Outputs}
+\begin{description}
+\item [Audio] Aux, Out
+\end{description}
+
+\subsubsection{Controls}
+\begin{itemize}
+\item Amp Or Freq
+\item Input Amplitude 2
+\item Input Bias
+\item Int Osc
+\item Number Of Folds
+\end{itemize}
+
+\subsection{Wet Dry}
 
 blend between two inputs
 
@@ -1251,8 +2629,8 @@ blend between two inputs
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] Dry, Wet
 \item [CV] Level, Wet Dry Blend
+\item [Audio] Dry, Wet
 \end{description}
 
 \subsubsection{Outputs}
@@ -1269,16 +2647,14 @@ blend between two inputs
 
 \subsection{Wet Dry Stereo}
 
-Included in Beebo And Digit.
-
 blend stereo inputs to stereo out
 
 
 
 \subsubsection{Inputs}
 \begin{description}
-\item [Audio] Dry L, Dry R, Wet L, Wet R
 \item [CV] Level, Wet Dry Blend
+\item [Audio] Dry L, Dry R, Wet L, Wet R
 \end{description}
 
 \subsubsection{Outputs}
@@ -1291,1238 +2667,5 @@ blend stereo inputs to stereo out
 \item Level
 \item Shape
 \item Signal A/B
-\end{itemize}
-
-\section{Input / Output}
-
-\subsection{Cv To Midi Cc}
-
-Included in Beebo And Digit.
-
-convert control to MIDI CC
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [CV] Cv In
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [MIDI] Midi Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Cc Number
-\item Channel
-\item Resolution
-\end{itemize}
-
-\subsection{Foot Switch A}
-
-Included in Beebo And Digit.
-
-The left footswitch
-
-
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Tempo] Bpm Out
-\item [CV] Value Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Bpm
-\item Is Latching
-\item Off Value
-\item On Value
-\item Value
-\item Value
-\end{itemize}
-
-\subsection{Foot Switch B}
-
-Included in Beebo And Digit.
-
-The center footswitch
-
-
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Tempo] Bpm Out
-\item [CV] Value Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Bpm
-\item Is Latching
-\item Off Value
-\item On Value
-\item Value
-\item Value
-\end{itemize}
-
-\subsection{Foot Switch C}
-
-Included in Beebo And Digit.
-
-The right footswitch
-
-
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Tempo] Bpm Out
-\item [CV] Value Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Bpm
-\item Is Latching
-\item Off Value
-\item On Value
-\item Value
-\item Value
-\end{itemize}
-
-\subsection{Midi Cc}
-
-Included in Beebo And Digit.
-
-MIDI CC to control value
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [MIDI] Midi Input
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Output
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Cc Number
-\item Logarithmic
-\item Maximum
-\item Minimum
-\end{itemize}
-
-\subsection{Midi Clock In}
-
-Included in Beebo And Digit.
-
-MIDI Clock to BPM
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [MIDI] Midi Input
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Tempo] Bpm
-\end{description}
-
-\subsection{Midi Clock Out}
-
-Included in Beebo And Digit.
-
-BPM to MIDI Clock
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Tempo] Bpm
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [MIDI] Midi Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Bpm
-\end{itemize}
-
-\subsection{Midi Note To Cv}
-
-Included in Beebo And Digit.
-
-convert MIDI notes to v per octave pitch CVs
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [MIDI] Midi Input
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Gate, Pitch, Velocity
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Cent
-\item Channel
-\item Octave
-\item Panic
-\item Retrigger
-\item Semitone
-\end{itemize}
-
-\subsection{Poly Note To Cv}
-
-Included in Beebo.
-
-convert poly MIDI notes to v per octave pitch CVs
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [MIDI] Midi Input
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Gate 1, Gate 2, Gate 3, Gate 4, Pitch 1, Pitch 2, Pitch 3, Pitch 4, Velocity
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Cent
-\item Channel
-\item Octave
-\item Panic
-\item Semitone
-\end{itemize}
-
-\section{Controls}
-
-\subsection{Ad Env Level}
-
-Included in Beebo And Digit.
-
-A attack decay envelope generator with start and end levels. Works with a trigger.
-
-Envelopes take in a  trigger and produce a CV that changes over time.
-                  This version has just 2 stages, attack and decay. Connect triggers to the envelope and then connect the envelope output to the parameter you want to change over time.
-                  This version adds a level to attack to and then decay to compared to the standard version.
-
-\subsubsection{Inputs}
-\begin{description}
-\item [CV] Gate, Reset Level, Trigger
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Envelope Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Attack Time
-\item Attack To Level
-\item Decay Time
-\item Decay To Level
-\item Initial Level
-\end{itemize}
-
-\subsection{Ad Envelope}
-
-Included in Beebo And Digit.
-
-A attack decay envelope generator. Works with a trigger.
-
-Envelopes take in a  trigger and produce a CV that changes over time.
-                  This version has just 2 stages, attack and decay. Connect triggers to the envelope and then connect the envelope output to the parameter you want to change over time.
-                  This version attacks to 1 from 0.
-
-\subsubsection{Inputs}
-\begin{description}
-\item [CV] Gate, Trigger
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Envelope Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Attack Time
-\item Decay Time
-\end{itemize}
-
-\subsection{Adsr}
-
-Included in Beebo And Digit.
-
-Basic ADSR envelope generator. Takes in a gate.
-
-Envelopes take in a  trigger and produce a CV that changes over time.
-                  This version has 4 stages, attack, decay, sustain and release. Connect triggers to the envelope and then connect the envelope output to the parameter you want to change over time.
-                  This is an important part of a synthesis but can also be used to create things like autoswells. Useful when connected to a VCA.
-
-\subsubsection{Inputs}
-\begin{description}
-\item [CV] Driving Signal
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Envelope Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Attack Time
-\item Decay Time
-\item Release Time
-\item Sustain Level
-\item Trigger Threshold
-\end{itemize}
-
-\subsection{Attenuverter}
-
-Included in Beebo And Digit.
-
-The attenuverter changes level and/or phase of a control signal. A x B
-
-An attenuverter attenuates and inverts signals.
-                  You can combine signals using it, for example to ring modulate two LFOs together, or just reduce the level of a CV
-
-\subsubsection{Inputs}
-\begin{description}
-\item [CV] A, B
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Product
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item A
-\item B
-\end{itemize}
-
-\subsection{Dahdsr}
-
-Included in Beebo And Digit.
-
-A delay attack hold decay sustain release envelope generator
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [CV] Attack Time, Decay Time, Delay Time, Gate, Hold Time, Release Time, Sustain Level, Trigger
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Envelope Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Attack Time
-\item Decay Time
-\item Delay Time
-\item Hold Time
-\item Release Time
-\item Sustain Level
-\end{itemize}
-
-\subsection{Difference}
-
-Included in Beebo And Digit.
-
-a - b for control signals
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [CV] A Cv, B Cv
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Output
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item A
-\item B
-\end{itemize}
-
-\subsection{Drum Patterns}
-
-Included in Beebo.
-
-drum trigger explorer
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Tempo] Bpm
-\item [CV] Bd Fill Cv, Chaos Cv, Clock, Hh Fill Cv, Map X Cv, Map Y Cv, Reset, Run, Sn Fill Cv, Swing Cv
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Bass Drum Accent, Bass Drum Trigger, Hihat Accent, Hihat Trigger, Snare Accent, Snare Trigger
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Bass Drum Density
-\item Chaos
-\item Hihat Density
-\item Map X
-\item Map Y
-\item Reset Button
-\item Run Button
-\item Snare Density
-\item Swing
-\item Tempo
-\end{itemize}
-
-\subsection{Env Follower}
-
-Included in Beebo And Digit.
-
-Track an input signal and convert it into a control signal
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Audio] Audio In
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Cv Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Attack Time
-\item Decay Time
-\item Invert
-\item Maximum Value
-\item Minimum Value
-\item Peak/Rms
-\item Saturation
-\item Threshold
-\end{itemize}
-
-\subsection{Lfo}
-
-Included in Beebo And Digit.
-
-Low frequency oscillator, send a control signal.
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Tempo] Bpm
-\item [CV] Reset
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Output
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Level
-\item Shape Mod
-\item Tempo
-\item Tempo Multiplier
-\item Unipolar
-\item Wave Form
-\end{itemize}
-
-\subsection{Max}
-
-Included in Beebo And Digit.
-
-max of a, b also logical or
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [CV] A Cv, B Cv
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Output
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item A
-\item B
-\end{itemize}
-
-\subsection{Min}
-
-Included in Beebo And Digit.
-
-min of a, b also logical and
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [CV] A Cv, B Cv
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Output
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item A
-\item B
-\end{itemize}
-
-\subsection{Onset Detect}
-
-Included in Beebo And Digit.
-
-detects when a note starts and sends a trigger
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Audio] In
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Gate
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Onset Threshold
-\item Silence Threshold
-\end{itemize}
-
-\subsection{Pitch Detect}
-
-Included in Beebo.
-
-BETA detects played notes and converts it volt per octave and MIDI
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Audio] In
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Gate, V/Oct Pitch
-\item [MIDI] Midi Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Onset Threshold
-\item Pitch Detection Tolerance
-\item Silence Threshold
-\end{itemize}
-
-\subsection{Product}
-
-Included in Beebo And Digit.
-
-a times b for control signals
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [CV] A Cv, B Cv
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Output
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item A
-\item B
-\end{itemize}
-
-\subsection{Ratio}
-
-Included in Beebo And Digit.
-
-a divided by b for control signals
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [CV] A Cv, B Cv
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Output
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item A
-\item B
-\end{itemize}
-
-\subsection{Rectify Value}
-
-Included in Beebo And Digit.
-
-rectify or get the absolute value of the input. 
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [CV] A Cv
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Output
-\end{description}
-
-\subsection{Sample Hold}
-
-Included in Beebo And Digit.
-
-sample and hold a CV value when a trigger goes high
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [CV] Input, Trigger
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Gate, Output
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Trigger Level
-\end{itemize}
-
-\subsection{Slew Limiter}
-
-Included in Beebo And Digit.
-
-Slows how fast a control signal changes. Useful with foot switches.
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [CV] In
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Time Down
-\item Time Up
-\end{itemize}
-
-\subsection{Step Sequencer}
-
-Included in Beebo And Digit.
-
-16 Step sequencer with internal clock
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Tempo] Bpm
-\item [CV] Back Gate, Play, Reset Trigger
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Value Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Back
-\item Bpm
-\item Glide
-\item Loop Steps
-\item Note Length
-\item Play
-\item Value 0
-\item Value 1
-\item Value 10
-\item Value 11
-\item Value 12
-\item Value 13
-\item Value 14
-\item Value 15
-\item Value 2
-\item Value 3
-\item Value 4
-\item Value 5
-\item Value 6
-\item Value 7
-\item Value 8
-\item Value 9
-\end{itemize}
-
-\subsection{Step Sequencer Ext}
-
-Included in Beebo And Digit.
-
-16 Step sequencer that takes in a trigger for next or previous
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [CV] Back Trigger, Reset Trigger, Step Trigger
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Value Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Glide
-\item Loop Steps
-\item Value 0
-\item Value 1
-\item Value 10
-\item Value 11
-\item Value 12
-\item Value 13
-\item Value 14
-\item Value 15
-\item Value 2
-\item Value 3
-\item Value 4
-\item Value 5
-\item Value 6
-\item Value 7
-\item Value 8
-\item Value 9
-\end{itemize}
-
-\subsection{Sum}
-
-Included in Beebo And Digit.
-
-a + b for control signals
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [CV] A Cv, B Cv
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Output
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item A
-\item B
-\end{itemize}
-
-\subsection{Tempo Ratio}
-
-Included in Beebo And Digit.
-
-ratio between a tempo, like 3/4 to input tempo
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Tempo] Input Tempo
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Tempo] Output Tempo
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item A
-\item B
-\end{itemize}
-
-\subsection{Toggle}
-
-Included in Beebo And Digit.
-
-toggles the output value on every trigger
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [CV] Trigger
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [CV] Out Gate
-\end{description}
-
-\subsection{Vca}
-
-Included in Beebo And Digit.
-
-simple voltage controlled amplifier
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Audio] Input
-\item [CV] Gain
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Audio] Output
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Gain
-\end{itemize}
-
-\section{Synthesis / Weird}
-
-\subsection{Diode Ladder Lpf}
-
-Included in Beebo.
-
-A diode ladder low pass filter similar to the vintage Japanese designs
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Audio] In
-\item [CV] Cutoff Cv, Q Cv
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Audio] Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Cutoff
-\item Q
-\end{itemize}
-
-\subsection{Filter}
-
-Included in Beebo And Digit.
-
-Virtual analog resonant low pass filter
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Audio] Input
-\item [CV] Exp Fm, Fm, Resonance Mod
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Audio] Output
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Exp. Fm Gain
-\item Frequency
-\item Input Gain
-\item Output Gain
-\item Resonance
-\item Resonance Gain
-\end{itemize}
-
-\subsection{Granular}
-
-Included in Beebo And Digit.
-
-granular texture generator, can work as a weird delay or reverb
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Audio] L In, R In
-\item [CV] Blend, Density, Freeze, Pitch, Position, Reverb, Reverse, Size, Spread, Texture, Trigger, Feedback
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Audio] L Out, R Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Blend
-\item Density
-\item Feedback
-\item Freeze
-\item Pitch
-\item Position
-\item Reverb
-\item Reverse
-\item Size
-\item Spread
-\item Texture
-\end{itemize}
-
-\subsection{K Org Hpf}
-
-Included in Beebo And Digit.
-
-A high pass filter similar to the vintage Japanese designs
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Audio] In
-\item [CV] Cutoff Cv, Q Cv
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Audio] Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Cutoff
-\item Q
-\end{itemize}
-
-\subsection{K Org Lpf}
-
-Included in Beebo And Digit.
-
-A low pass filter similar to the vintage Japanese designs
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Audio] In
-\item [CV] Cutoff Cv, Q Cv
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Audio] Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Cutoff
-\item Q
-\end{itemize}
-
-\subsection{Macro Osc}
-
-Included in Beebo.
-
-a powerful multi model oscillator voice
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [CV] V Per Oct Cv, Engine Cv, Frequency Cv, Harmonics Cv, Level Cv, Morph Cv, Timbre Cv, Trigger Cv
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Audio] Aux, Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Frequency
-\item Frequency Mod
-\item Harmonics
-\item Lpg Color
-\item Lpg Decay
-\item Model
-\item Morph
-\item Morph Mod
-\item Timbre
-\item Timbre Mod
-\end{itemize}
-
-\subsection{Meta Modulation}
-
-Included in Beebo.
-
-Powerful cross modulation module. Applies an algorithm to the two inputs.
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Audio] Carrier, Modulator
-\item [CV] Algorthm Cv, Level 1 Cv, Level 2 Cv, Timbre Cv
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Audio] Aux, Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Algorithm
-\item Level 1
-\item Level 2
-\item Shape
-\item Timbre
-\end{itemize}
-
-\subsection{Oog Half Lpf}
-
-Included in Beebo.
-
-A low pass filter inspired by vintage American designs
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Audio] In
-\item [CV] Cutoff Cv, Q Cv
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Audio] Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Cutoff
-\item Q
-\end{itemize}
-
-\subsection{Pitch Shift}
-
-Included in Beebo And Digit.
-
-a basic pitch shifter. It delays the input signal
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Audio] Input
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Audio] Output
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Dry Level
-\item Semitone Shift
-\item Wet Level
-\end{itemize}
-
-\subsection{Resonestor}
-
-Included in Beebo.
-
-dual voice four part resonator
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Audio] L In, R In
-\item [CV] Chord, Decay, Filter, Harmonics, Pitch, Random Mod, Reverse, Scatter, Spread, Switch Voice, Timbre, Trigger
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Audio] L Out, R Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Chord
-\item Decay
-\item Filter
-\item Harmonics
-\item Pitch
-\item Random Mod
-\item Reverse
-\item Scatter
-\item Spread
-\item Switch Voice
-\item Timbre
-\end{itemize}
-
-\subsection{Time Stretch}
-
-Included in Beebo And Digit.
-
-A granular time stretching and pitch shifting module
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Audio] L In, R In
-\item [CV] Blend, Diffusion, Filter, Loop, Pitch, Position, Reverb, Reverse, Size, Spread, Trigger, Feedback
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Audio] L Out, R Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Blend
-\item Diffusion
-\item Feedback
-\item Filter
-\item Freeze
-\item Pitch
-\item Position
-\item Reverb
-\item Reverse
-\item Size
-\item Spread
-\end{itemize}
-
-\subsection{Uberheim Filter}
-
-Included in Beebo And Digit.
-
-A multi out filter inspired by vintage American designs
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Audio] In
-\item [CV] Cutoff Cv, Q Cv
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Audio] Band Pass, Band Stop, High Pass, Low Pass
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Cutoff
-\item Q
-\end{itemize}
-
-\subsection{Wavefolder}
-
-Included in Beebo.
-
-Chebyshev wave folder
-
-
-
-\subsubsection{Inputs}
-\begin{description}
-\item [Audio] Carrier, Modulator
-\item [CV] Input Amp 2 Cv, Input Amp Cv, Input Bias Cv, Num Fold Cv
-\end{description}
-
-\subsubsection{Outputs}
-\begin{description}
-\item [Audio] Aux, Out
-\end{description}
-
-\subsubsection{Controls}
-\begin{itemize}
-\item Amp Or Freq
-\item Input Amplitude 2
-\item Input Bias
-\item Int Osc
-\item Number Of Folds
 \end{itemize}
 

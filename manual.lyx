@@ -42,10 +42,10 @@
 \paperfontsize default
 \spacing single
 \use_hyperref true
-\pdf_title "Digit and Beebo Manual"
+\pdf_title "Hector and Beebo Manual"
 \pdf_author "Poly Effects"
-\pdf_subject "Digit and Beebo Manual"
-\pdf_keywords "digit beebo"
+\pdf_subject "Hector and Beebo Manual"
+\pdf_keywords "hector digit beebo"
 \pdf_bookmarks true
 \pdf_bookmarksnumbered false
 \pdf_bookmarksopen true
@@ -123,7 +123,25 @@
 \begin_layout Standard
 If you're ever confused by anything or need help please contact me.
  This manual is a compliment to the videos.
- Please watch the videos at 
+ 
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset CommandInset href
+LatexCommand href
+name "videos by Tri Pedal Review"
+target "https://www.youtube.com/watch?v=G7QwVj_Csm4"
+literal "false"
+
+\end_inset
+
+ are really the best place to start.
+ 
+\end_layout
+
+\begin_layout Standard
+After those please watch the videos at 
 \begin_inset Flex URL
 status open
 
@@ -134,7 +152,20 @@ https://www.youtube.com/channel/UCwQ9E6imYd0qFPMEuEZjcdw
 
 \end_inset
 
+ 
+\end_layout
 
+\begin_layout Standard
+The 
+\begin_inset CommandInset href
+LatexCommand href
+name "video from Andre LaFosse"
+target "https://www.youtube.com/watch?v=fvVEs3LuzVw"
+literal "false"
+
+\end_inset
+
+ is the best way to learn about the loopler module.
 \end_layout
 
 \begin_layout Quote
@@ -176,6 +207,10 @@ Start here
 Power
 \end_layout
 
+\begin_layout Subsubsection
+Beebo
+\end_layout
+
 \begin_layout Standard
 The first thing to do is power the pedal.
  It's 9V center negative and requires at least 500mA.
@@ -184,8 +219,20 @@ The first thing to do is power the pedal.
  for a few seconds.
 \end_layout
 
+\begin_layout Subsubsection
+Hector
+\end_layout
+
 \begin_layout Standard
-Once Digit / Beebo has started up we're at the main screen, with the default
+Hector needs to be connected with -12 v going to the marked -12 v orientation.
+ The connectors are keyed but check if -12 on your supply is going to -12
+ on the module.
+ It needs 340mA from +12, not much from -12 and 0 from 5v.
+ 
+\end_layout
+
+\begin_layout Standard
+Once Hector / Beebo has started up we're at the main screen, with the default
  preset (the first one in your set list) loaded.
  From here we can add modules, change the settings of existing modules,
  connect modules or load a preset.
@@ -216,7 +263,7 @@ Modules are the basic blocks you connect.
  There are some modules that process audio, and some modules that you can
  use to control other modules.
  The ability to control modules is the powerful modular / eurorack style
- workflow that differentiates Digit / Beebo from many other systems.
+ workflow that differentiates Hector / Beebo from many other systems.
 \end_layout
 
 \begin_layout Subsection
@@ -262,9 +309,7 @@ The new delay will appear on the screen and you can now drag it to a comfortable
 \end_layout
 
 \begin_layout Standard
-To start I recommend tapping the help button (the ? mark) which will turn
- on the extra help labels.
- Remember that single modules can be very powerful, so start with a small
+Remember that single modules can be very powerful, so start with a small
  number of them and understand them before adding more.
  It'll be much easier to work out what is going on.
  The standard delay module has many features compared to standalone delay
@@ -333,7 +378,8 @@ Knobs
 \end_layout
 
 \begin_layout Standard
-Once you touch any slider to change it, it automatically maps to the knobs.
+Once you touch any slider to change it, it automatically maps to the knobs
+ on Beebo.
  The right knob changes the value a lot (coarse) and the left by a little
  (fine).
 \end_layout
@@ -343,10 +389,11 @@ Presets
 \end_layout
 
 \begin_layout Standard
-To save or load a preset tap the floppy disk icon.
+To save or load a preset tap the patch icon.
  You'll also see a set list option.
  This is what order you move through the presets in your set list when pressing
- both center and right or center and left foot switches together.
+ both center and right or center and left foot switches together on Beebo
+ or sending MIDI program change messages on Hector or Beebo.
 \end_layout
 
 \begin_layout Subsection
@@ -529,23 +576,23 @@ Firmware update
 \end_layout
 
 \begin_layout Standard
-If you have a very early Digit and currently have version 1.something (eg
- 1.7) firmware installed (check in the setting menu) please contact me before
- updating.
+If you have a very early light pink Digit and currently have version 1.something
+ (eg 1.7) firmware installed (check in the setting menu) please contact me
+ before updating.
  
 \end_layout
 
 \begin_layout Standard
-For Beebo or January 2020 or later versions of Digit, please grab the packages
- in the 'upgrade_from_2' folder from here and put them on a usb flash drive
- and click upgrade.
- It should be very quick.
+For Hector or Beebo please grab the files from the site, unzip them and
+ the copy them to a usb flash drive and click upgrade.
+ It should be quite quick.
  It'll restart itself.
  The packages need to all be on the USB drive and not in a zip.
  The current packages are frontend, modules, ingen and extra-content.
  If you've updated recently and know that one file hasn't changed then you
  don't need to include it on the USB flash drive next update and it'll update
  a little faster.
+ It's safer to just update everything though.
 \end_layout
 
 \begin_layout Standard
@@ -566,11 +613,11 @@ Inputs as effects loops
 \end_layout
 
 \begin_layout Standard
-You can use the input / outputs of Digit as effect loops.
+You can use the input / outputs of Hector or Beebo as effect loops.
  For example, physically connect output 3 to an external phaser pedal, then
  connect the output of the phaser to input 3.
- Then on Digit, connect a delay to output 3, and then connect input 3 directly
- to output 1.
+ Then on Beebo / Hector, connect a delay to output 3, and then connect input
+ 3 directly to output 1.
  The repeats of that delay will now be running through the phaser.
  Be careful not to create feedback paths, or route dry in parallel where
  some signal goes through external pedals.
@@ -647,8 +694,8 @@ Import reverbs / cabs
 \end_layout
 
 \begin_layout Standard
-To import new cab or reverb IRs onto Digit, copy them onto a USB flash drive
- in folders called reverbs and cabs for each.
+To import new cab or reverb IRs onto Beebo / Hector, copy them onto a USB
+ flash drive in folders called reverbs and cabs for each.
  Then go to settings and tap Copy IRs.
  The files must be 48 kHz wavs.
  
@@ -659,7 +706,7 @@ Import / Export Presets
 \end_layout
 
 \begin_layout Standard
-Press the floppy disk icon to get to the preset screen.
+Press the patch icon to get to the preset screen.
  Then press export preset where it'll ask you if you want to export the
  current preset or all presets.
 \end_layout
@@ -668,18 +715,41 @@ Press the floppy disk icon to get to the preset screen.
 MIDI
 \end_layout
 
+\begin_layout Standard
+Before Digit serial 475, Beebo serial 338: Type B, 3.5 MM TRS.
+ This is the same ring active pin out as Chase Bliss.
+ 
+\end_layout
+
+\begin_layout Standard
+Digit serial 475, Beebo serial 338 or later: Type A input, 3.5 MM TRS.
+ This is the MIDI standard pin out.
+ Type B output.
+ It's stupid.
+\end_layout
+
+\begin_layout Standard
+Hector is Type A in and out, standard 3.5 MM TRS.
+\end_layout
+
+\begin_layout Standard
+No MIDI box / etc is needed as the pedal / module has opto isolation on
+ board and midi thru.
+ 
+\end_layout
+
 \begin_layout Subsection
 Changing Presets
 \end_layout
 
 \begin_layout Standard
-To change a preset with a program message, press the floppy disk icon to
- get to the preset screen.
+To change a preset with a program message, press the patch icon to get to
+ the preset screen.
  Tap set list and add preset here.
  The number next to them is what program change message you should send
  to change to that preset.
  This is also the order the foot switch pairs with D and E will step through
- them.
+ them on Beebo.
  
 \end_layout
 
@@ -688,7 +758,10 @@ CC Controls
 \end_layout
 
 \begin_layout Standard
-To learn a control, press the MIDI icon next to the slider.
+To learn a control, hold the more button (the triple dots) then press a
+ slider.
+ A MIDI icon will then appear.
+ Press it.
  It will then pulse until it detects a CC.
 \end_layout
 
@@ -704,8 +777,8 @@ e received, including interference that may cause undesired operation
 \end_layout
 
 \begin_layout Standard
-Digit includes code and art (such as fonts) under a variety of licenses
- including GPL / LGPL / MIT / BSD / OFL.
+Hector / Beebo includes code and art (such as fonts) under a variety of
+ licenses including GPL / LGPL / MIT / BSD / OFL.
  More details of this are available here: 
 \begin_inset Flex URL
 status open
@@ -720,12 +793,19 @@ https://github.com/polyeffects/
  
 \end_layout
 
+\begin_layout Standard
+Mutable Instruments modules names are used with permission from Mutable
+ Instruments.
+ They are wonderful.
+\end_layout
+
 \begin_layout Section
 Thanks
 \end_layout
 
 \begin_layout Standard
-A giant collection of people have helped Poly Effects and Digit specifically.
+A giant collection of people have helped Poly Effects and Beebo & Hector
+ specifically.
  These include Helen Davison (my mum), Claire Jeddou, Celeste Reno, Jo Gardiner,
  David Robillard, Michelle Lam, Bernie Tschirren, Lisa Bryant, Ed Pettersen,
  Josh Smith, Jordan Rudess, Leon Todd, Filipe Coelho and Robin Gareus.
