@@ -609,6 +609,25 @@ The USB flash drive must be formatted FAT32 and have one partition on it.
 \end_layout
 
 \begin_layout Subsection
+CPU usage meter
+\end_layout
+
+\begin_layout Standard
+The CPU usage meter appears when you are using over 60% of the CPU.
+ Beebo and Hector have the same CPU.
+ It's a 64 bit quad core CPU.
+ Some modules use more CPU than others.
+ You'll often notice that adding a module doesn't use any more CPU.
+ This is because if the audio path is parallel the new module often just
+ uses a core that isn't being used.
+ The best way to maximise the available CPU in a patch is to avoid serial
+ paths, that is when one module leads directly into another.
+ Instead route the modules in parallel.
+ 4 modules in parallel will often use the same amount of CPU as a single
+ module, and 1/4 as much CPU as 4 in serial.
+\end_layout
+
+\begin_layout Subsection
 Inputs as effects loops
 \end_layout
 
@@ -709,6 +728,377 @@ Import / Export Presets
 Press the patch icon to get to the preset screen.
  Then press export preset where it'll ask you if you want to export the
  current preset or all presets.
+\end_layout
+
+\begin_layout Part
+Loopler
+\end_layout
+
+\begin_layout Standard
+The Loopler is based on Sooperlooper, which in turn is based roughly on
+ the EDP (LoopIII / LoopIV) so reading the EDP Manuals can be useful.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "Andre LaFosse has great videos"
+target "https://www.youtube.com/user/andrelafosse/videos"
+literal "false"
+
+\end_inset
+
+ about the EDP style workflow that should mostly apply to the Loopler module.
+ The EDP style looping is quite different to some loopers you might have
+ used in the past so it's handy to understand the basic concepts.
+ 
+\end_layout
+
+\begin_layout Standard
+To get started with loopler, add a loop common in and a loop common out,
+ and connect them how you'd like the audio to be routed.
+ You can easily have effects that are only on your dry or only on the loop
+ output, or effects that are on the loop send with this approach.
+ Add two loop common ins and outs to get stereo looping.
+ I am planning to add individual loop in and outs in a future firmware update
+ if people are interested in that feature.
+\end_layout
+
+\begin_layout Standard
+Once you've added the loopler modules, press the module and you'll get the
+ main loopler screen.
+ Here you'll see a number of commands.
+ 
+\end_layout
+
+\begin_layout Standard
+MIDI binding and footswitch (for Beebo) binding work differently than other
+ modules, due to the need to bind many commands.
+ Commands can be applied to multiple loops, the selected loop or a specific
+ loop.
+ For example you could bind a MIDI CC to start record on loop 2, even if
+ loop 1 is the current selected loop.
+ In global settings there is a prev loop and next loop button, which can
+ be used to bind these commands to MIDI.
+ 
+\end_layout
+
+\begin_layout Standard
+To bind a command, press the MIDI icon.
+ You'll then need to select if the command should act on the selected loop,
+ all loops or a specific loop (the number is the loop you have currently
+ selected.) Now press the command you want and the MIDI icon will flash,
+ waiting for you to send a MIDI command.
+ You can bind to CCs and notes.
+ 
+\end_layout
+
+\begin_layout Standard
+No routing from the MIDI input in the patch view is needed for basic MIDI
+ actions, or to sync to MIDI clock.
+ If you want to control Loopler from an internal MIDI CC generator, for
+ example a CV to MIDI CC connected up to an external CV source or an internal
+ module like the chaos controller you need to add the loop extra midi module.
+\end_layout
+
+\begin_layout Standard
+To bind a foot switch to a command, hold down the foot switch then press
+ the command.
+\end_layout
+
+\begin_layout Section
+Command Reference
+\end_layout
+
+\begin_layout Standard
+You can learn more about to use the commands musically from the SooperLooper
+ and EDP manuals.
+\end_layout
+
+\begin_layout Subsection
+RECORD 
+\end_layout
+
+\begin_layout Standard
+This is the inital command.
+ If you set the record threshold to minimum, pressing it once will start
+ recording and pressing again will end the recording.
+\end_layout
+
+\begin_layout Standard
+If you set the threshold higher recording doesn't start until the input
+ level is louder than the threshold.
+ When stoping recording, the threshold is ignored.
+ The EDP manual has tips and states, it works best if you stop and start
+ recording the moment you hit a downbeat, not before.
+\end_layout
+
+\begin_layout Subsubsection
+Special Endings
+\end_layout
+
+\begin_layout Itemize
+If you end a RECORD with another command (OVERDUB, MULTIPLY, REPLACE, SUBSTITUTE
+, INSERT, ONCE) it will stop recording the loop immediately (threshold ignored)
+ and start the new command.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ending with REVERSE stops recording and plays the loop backwards once then
+ goes into MUTE mode.
+ 
+\end_layout
+
+\begin_layout Subsection
+OVERDUB 
+\end_layout
+
+\begin_layout Standard
+This keeps playing the loop and adds whatever you play on top until you
+ stop overdubbing.
+ This is the main command you will use.
+ Feedback, in the level / sync section, controls the amount of the original
+ loop that is used every cycle.
+\end_layout
+
+\begin_layout Subsection
+MULTIPLY
+\end_layout
+
+\begin_layout Standard
+This is similar to overdub, except the original loop is repeated, "multiplying"
+ the loop length until you stop it.
+ It can turn a 1 cycle loop into a 2,3, etc cycle loop.
+ The quantise option you've selected in the global settings section affects
+ how the overdubbing starts.
+ 
+\end_layout
+
+\begin_layout Standard
+Keep in mind that the original loop length is a "cycle" and the loop length
+ will be a multiple of that.
+ You can actually make an already multiplied loop have fewer cycles when
+ using Multiply on loops that have already been multiplied.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Special Endings
+\end_layout
+
+\begin_layout Itemize
+If you end a MULTIPLY with a RECORD command it ends the loop immediately
+ and resets the cycle length to the whole loop.
+ 
+\end_layout
+
+\begin_layout Itemize
+MultiIncrease allows you to increment the cycle count ahead of time, without
+ needing to wait until the exact time to finish the multiply.
+ Press Multiply as if you were finishing it, then before the current cycle
+ finishes, press Multiply again repeatedly to add cycles.
+ The multiply will automatically go into playback after the specified number
+ of cycles.
+ 
+\end_layout
+
+\begin_layout Subsection
+INSERT 
+\end_layout
+
+\begin_layout Standard
+It inserts new input in place, but always one "cycle" length...
+ QuantizeMode effects the same way as Multiply.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Special Endings 
+\end_layout
+
+\begin_layout Standard
+Ending with a RECORD command ends the operation immediately and resets the
+ cycle length to the whole loop.
+ 
+\end_layout
+
+\begin_layout Subsection
+REPLACE
+\end_layout
+
+\begin_layout Standard
+Replaces the audio in the loop for the duration of the command.
+ The existing loop audio is not heard during the operation.
+\end_layout
+
+\begin_layout Standard
+When Quantize is on, this command will be quantized on start and finish
+ with the current sync and quantize parameters.
+ 
+\end_layout
+
+\begin_layout Subsection
+SUBSTITUTE
+\end_layout
+
+\begin_layout Standard
+Is like Replace except you still hear the current underlying loop audio
+ as it records new audio into the loop.
+ When the loop is played again, only the newly recorded audio will be heard.
+ This helps when recording a replacement section, because you can play with
+ what was there.
+\end_layout
+
+\begin_layout Standard
+When Quantize is on, this command will be quantized on start and finish.
+ 
+\end_layout
+
+\begin_layout Subsection
+REVERSE
+\end_layout
+
+\begin_layout Standard
+Reverses playback direction.
+ Can be used in play mode, and even during OVERDUB.
+ Can also be used in DELAY mode.
+ If Quantize is on, the reversal doesn't happen until the next sync boundary,
+ keeping the loop in time.
+ 
+\end_layout
+
+\begin_layout Subsection
+UNDO
+\end_layout
+
+\begin_layout Standard
+Restores the playing loop to the state before the last operation.
+ It maintains the current time position if the current loop was based on
+ the previous loop (eg, not newly recorded).
+ You can go all the way back to the first one still intact within the loop
+ memory.
+ As more operations are done, more of the available loop memory is used,
+ and it will eventually start reclaiming the oldest versions.
+\end_layout
+
+\begin_layout Standard
+Pressing Undo when an operation is waiting for sync or quantization will
+ cancel the pending operation.
+ 
+\end_layout
+
+\begin_layout Subsection
+REDO
+\end_layout
+
+\begin_layout Standard
+Redoes the loop if it can (if you haven't done a new operation since your
+ last undo).
+ Together UNDO and REDO allow you to do some creative things.
+\end_layout
+
+\begin_layout Subsection
+MUTE 
+\end_layout
+
+\begin_layout Standard
+Press to mute loop output.
+ To continue playing the loop in time press MUTE again.
+ To continue playing the loop from the top press TRIGGER.
+ To play back the loop once and return to mute, press ONESHOT.
+ 
+\end_layout
+
+\begin_layout Subsection
+TRIGGER 
+\end_layout
+
+\begin_layout Standard
+this immediately restarts the loop playing back from the beginning.
+ 
+\end_layout
+
+\begin_layout Subsection
+ONESHOT
+\end_layout
+
+\begin_layout Standard
+this immediately restarts the loop playing back from the beginning, and
+ goes into MUTE mode at the end of the loop.
+ 
+\end_layout
+
+\begin_layout Subsection
+PAUSE 
+\end_layout
+
+\begin_layout Standard
+Press to pause loop playback.
+ To continue playing the loop from the paused time press PAUSE again.
+ To play the loop from the start press TRIGGER.
+ To play back the loop once and return to mute, press ONESHOT.
+ 
+\end_layout
+
+\begin_layout Subsection
+SOLO 
+\end_layout
+
+\begin_layout Standard
+Pressing SOLO will mute all other loops.
+ Pressing it again will revert to the previous state before solo was pressed
+ (eg, loops that were muted before the first press will stay muted).
+ Pressing solo for a different loop will cause that loop to be the new soloed
+ loop.
+ You can't solo multiple loops.
+ 
+\end_layout
+
+\begin_layout Subsection
+DELAY MODE
+\end_layout
+
+\begin_layout Standard
+Pressing the Delay command triggers Delay Mode.
+ The time between the most recent two presses is the new delay time.
+ While in DELAY mode, you can toggle Hold Mode (by pressing Replace), or
+ Reverse at any time.
+ To get out of delay mode press any other function or UNDO.
+ Please adjust Feedback down from 1 before you enter delay mode or the feedback
+ will build up quickly.
+ 
+\end_layout
+
+\begin_layout Part
+More Features
+\end_layout
+
+\begin_layout Section
+Specifications
+\end_layout
+
+\begin_layout Standard
+Both Hector and Beebo share the same CPU, and new Beebos share the same
+ screen.
+ Both are running at 32 bit float internally, 24 bit conversion and 48kHz
+ sampling.
+\end_layout
+
+\begin_layout Subsection
+Hector
+\end_layout
+
+\begin_layout Standard
+All IO is 
+\begin_inset Formula $\pm$
+\end_inset
+
+5V.
+ Pitch is 
+\begin_inset Formula $\pm$
+\end_inset
+
+5V, if other modules you're using expect 0-10V you'll need to use a shifter,
+ like the Pico MScale from Erica Synths.
 \end_layout
 
 \begin_layout Section
